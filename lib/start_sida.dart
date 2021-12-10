@@ -5,6 +5,8 @@ class StartSida extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
+          foregroundColor: Colors.blueAccent,
+          backgroundColor: Colors.purple,
           title: Text("Start Sida"),
         ),
         body: Column(children: [
@@ -24,12 +26,12 @@ class StartSida extends StatelessWidget {
               albumTitel: 'Easy On Me', artist: 'Adele', albumBetyg: '4/5'),
         ]),
         bottomNavigationBar: BottomNavigationBar(
-          backgroundColor: Colors.blue,
+          backgroundColor: Colors.purple,
           items: const <BottomNavigationBarItem>[
             BottomNavigationBarItem(
-                icon: Icon(Icons.arrow_back),
-                label: 'Back',
-                backgroundColor: Colors.green),
+              icon: Icon(Icons.arrow_back_ios_new),
+              label: 'Back',
+            ),
             BottomNavigationBarItem(
               icon: Icon(Icons.home),
               label: 'Home',
