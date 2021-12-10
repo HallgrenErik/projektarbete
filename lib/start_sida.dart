@@ -1,15 +1,35 @@
 import 'package:flutter/material.dart';
 import 'package:my_first_app/album_lista.dart';
+import 'package:my_first_app/avancerad_sokning.dart';
+import 'package:my_first_app/mina_reviews.dart';
 
 class StartSida extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          foregroundColor: Colors.blueAccent,
-          backgroundColor: Colors.purple,
-          title: Text("Start Sida"),
-        ),
-        body: Column(children: [
+            foregroundColor: Colors.blueAccent,
+            backgroundColor: Colors.purple,
+            title: Text("Start Sida"),
+            actions: [
+              PopupMenuButton(
+                onSelected: null,
+                itemBuilder: (context) => [
+                  // ignore: prefer_const_constructors
+                  PopupMenuItem(child: Text('top betyg')),
+                  PopupMenuItem(child: Text('top antal recensioner')),
+                ],
+              ),
+              IconButton(
+                  icon: Icon(Icons.search),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => AvanceradSokning()),
+                    );
+                  }),
+            ]),
+        body: ListView(children: [
           filterbar(),
           albumRow(
               albumTitel: 'Tänd ett Ljus', artist: 'AcDc', albumBetyg: '5/5'),
@@ -22,6 +42,20 @@ class StartSida extends StatelessWidget {
               albumTitel: 'Last Chrismas',
               artist: 'Wham!',
               albumBetyg: '3.4/5'),
+          albumRow(
+              albumTitel: 'Easy On Me', artist: 'Adele', albumBetyg: '4/5'),
+          albumRow(
+              albumTitel: 'Easy On Me', artist: 'Adele', albumBetyg: '4/5'),
+          albumRow(
+              albumTitel: 'Easy On Me', artist: 'Adele', albumBetyg: '4/5'),
+          albumRow(
+              albumTitel: 'Easy On Me', artist: 'Adele', albumBetyg: '4/5'),
+          albumRow(
+              albumTitel: 'Easy On Me', artist: 'Adele', albumBetyg: '4/5'),
+          albumRow(
+              albumTitel: 'Easy On Me', artist: 'Adele', albumBetyg: '4/5'),
+          albumRow(
+              albumTitel: 'Easy On Me', artist: 'Adele', albumBetyg: '4/5'),
           albumRow(
               albumTitel: 'Easy On Me', artist: 'Adele', albumBetyg: '4/5'),
         ]),
@@ -37,10 +71,18 @@ class StartSida extends StatelessWidget {
               label: 'Home',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.list),
+              icon: Icon(Icons.list, color: Colors.red),
               label: 'My review',
             ),
           ],
-        ));
+        ),
+        floatingActionButton: FloatingActionButton(
+            child: Icon(Icons.list),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => MinaReviews()),
+              );
+            }));
   }
 }

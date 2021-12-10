@@ -22,3 +22,22 @@ Widget filterbar() {
     decoration: BoxDecoration(color: Colors.grey),
   );
 }
+
+Widget reviewItem(
+    {required String albumTitel, required String artist, var albumBetyg}) {
+  return ListTile(
+      leading: Container(
+        height: 30,
+        width: 30,
+        decoration: const BoxDecoration(color: Colors.amber),
+      ),
+      title: Text(albumTitel),
+      subtitle: Text(artist),
+      trailing: Text(albumBetyg));
+}
+
+Widget review(String reviewText) {
+  return ListTile(
+    title: Text('"$reviewText"'),
+  );
+}
