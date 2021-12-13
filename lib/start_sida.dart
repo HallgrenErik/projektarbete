@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/Projekt/album_view.dart';
+import './album_view.dart';
 import 'album_lista.dart';
 import 'avancerad_sokning.dart';
 import 'mina_reviews.dart';
