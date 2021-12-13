@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
-import 'album_lista.dart';
-import 'mina_reviews.dart';
+import './album_lista.dart';
+import './mina_reviews.dart';
 //import './api.dart';
 
-class artistView extends StatelessWidget {
+class ArtistView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

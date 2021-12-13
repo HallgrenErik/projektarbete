@@ -1,16 +1,23 @@
 import 'package:flutter/material.dart';
 
-Widget albumRow(
+import 'album_view.dart';
+
+Widget albumRow(BuildContext context,
     {required String albumTitel, required String artist, var albumBetyg}) {
   return ListTile(
-      leading: Container(
-        height: 30,
-        width: 30,
-        decoration: const BoxDecoration(color: Colors.amber),
-      ),
-      title: Text(albumTitel),
-      subtitle: Text(artist),
-      trailing: Text(albumBetyg));
+    leading: Container(
+      height: 30,
+      width: 30,
+      decoration: const BoxDecoration(color: Colors.amber),
+    ),
+    title: Text(albumTitel),
+    subtitle: Text(artist),
+    trailing: Text(albumBetyg),
+    onTap: () {
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => AlbumView()));
+    },
+  );
 }
 
 Widget filterbar() {

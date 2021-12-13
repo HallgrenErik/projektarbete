@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import './skriv_review.dart';
-<<<<<<< Updated upstream
 import './album_lista.dart';
-=======
-import 'album_lista.dart';
->>>>>>> Stashed changes
 
 import './artist_view.dart';
 
@@ -43,7 +39,7 @@ class AlbumView extends StatelessWidget {
               TextButton(
                 onPressed: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => artistView()));
+                      MaterialPageRoute(builder: (context) => ArtistView()));
                 },
                 child: Text("AC/DC"),
                 style: TextButton.styleFrom(
