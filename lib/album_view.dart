@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import './skriv_review.dart';
-<<<<<<< Updated upstream
 import './album_lista.dart';
-=======
-import 'album_lista.dart';
->>>>>>> Stashed changes
+<<<<<<< Updated upstream
 
 import './artist_view.dart';
+=======
+import './mina_reviews.dart';
+
+import 'artist_view.dart';
+>>>>>>> Stashed changes
 
 class AlbumView extends StatelessWidget {
   @override
@@ -43,7 +45,7 @@ class AlbumView extends StatelessWidget {
               TextButton(
                 onPressed: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => artistView()));
+                      MaterialPageRoute(builder: (context) => ArtistView()));
                 },
                 child: Text("AC/DC"),
                 style: TextButton.styleFrom(

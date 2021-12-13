@@ -7,57 +7,53 @@ import 'mina_reviews.dart';
 class StartSida extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-            foregroundColor: Colors.blueAccent,
-            backgroundColor: Colors.purple,
-            title: Text("GLITTER"),
-            actions: [
-              PopupMenuButton(
-                onSelected: null,
-                itemBuilder: (context) => [
-                  // ignore: prefer_const_constructors
-                  PopupMenuItem(child: Text('top betyg')),
-                  PopupMenuItem(child: Text('top antal recensioner')),
-                ],
-              ),
-              IconButton(
-                  icon: Icon(Icons.search),
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => AvanceradSokning()),
-                    );
-                  }),
-            ]),
+        appBar: AppBar(title: Text("GLITTER"), actions: [
+          PopupMenuButton(
+            onSelected: null,
+            itemBuilder: (context) => [
+              // ignore: prefer_const_constructors
+              PopupMenuItem(child: Text('top betyg')),
+              PopupMenuItem(child: Text('top antal recensioner')),
+            ],
+          ),
+          IconButton(
+              icon: Icon(Icons.search),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => AvanceradSokning()),
+                );
+              }),
+        ]),
         body: ListView(children: [
           filterbar(),
-          albumRow(
+          albumRow(context,
               albumTitel: 'Tänd ett Ljus', artist: 'AcDc', albumBetyg: '5/5'),
           albumRow(
+            context,
             albumTitel: 'S/M',
             artist: 'The Weekend',
             albumBetyg: '2.7/5',
           ),
-          albumRow(
+          albumRow(context,
               albumTitel: 'Last Chrismas',
               artist: 'Wham!',
               albumBetyg: '3.4/5'),
-          albumRow(
+          albumRow(context,
               albumTitel: 'Easy On Me', artist: 'Adele', albumBetyg: '4/5'),
-          albumRow(
+          albumRow(context,
               albumTitel: 'Easy On Me', artist: 'Adele', albumBetyg: '4/5'),
-          albumRow(
+          albumRow(context,
               albumTitel: 'Easy On Me', artist: 'Adele', albumBetyg: '4/5'),
-          albumRow(
+          albumRow(context,
               albumTitel: 'Easy On Me', artist: 'Adele', albumBetyg: '4/5'),
-          albumRow(
+          albumRow(context,
               albumTitel: 'Easy On Me', artist: 'Adele', albumBetyg: '4/5'),
-          albumRow(
+          albumRow(context,
               albumTitel: 'Easy On Me', artist: 'Adele', albumBetyg: '4/5'),
-          albumRow(
+          albumRow(context,
               albumTitel: 'Easy On Me', artist: 'Adele', albumBetyg: '4/5'),
-          albumRow(
+          albumRow(context,
               albumTitel: 'Easy On Me', artist: 'Adele', albumBetyg: '4/5'),
         ]),
         bottomNavigationBar: BottomNavigationBar(
