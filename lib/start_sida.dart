@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import './album_lista.dart';
-import './avancerad_sokning.dart';
-import './mina_reviews.dart';
+import 'package:myapp/Projekt/album_view.dart';
+import 'album_lista.dart';
+import 'avancerad_sokning.dart';
+import 'mina_reviews.dart';
 
 class StartSida extends StatelessWidget {
   Widget build(BuildContext context) {
@@ -9,7 +10,7 @@ class StartSida extends StatelessWidget {
         appBar: AppBar(
             foregroundColor: Colors.blueAccent,
             backgroundColor: Colors.purple,
-            title: Text("Start Sida"),
+            title: Text("GLITTER"),
             actions: [
               PopupMenuButton(
                 onSelected: null,
@@ -31,33 +32,32 @@ class StartSida extends StatelessWidget {
             ]),
         body: ListView(children: [
           filterbar(),
-          albumRow(context,
+          albumRow(
               albumTitel: 'Tänd ett Ljus', artist: 'AcDc', albumBetyg: '5/5'),
           albumRow(
-            context,
             albumTitel: 'S/M',
             artist: 'The Weekend',
             albumBetyg: '2.7/5',
           ),
-          albumRow(context,
+          albumRow(
               albumTitel: 'Last Chrismas',
               artist: 'Wham!',
               albumBetyg: '3.4/5'),
-          albumRow(context,
+          albumRow(
               albumTitel: 'Easy On Me', artist: 'Adele', albumBetyg: '4/5'),
-          albumRow(context,
+          albumRow(
               albumTitel: 'Easy On Me', artist: 'Adele', albumBetyg: '4/5'),
-          albumRow(context,
+          albumRow(
               albumTitel: 'Easy On Me', artist: 'Adele', albumBetyg: '4/5'),
-          albumRow(context,
+          albumRow(
               albumTitel: 'Easy On Me', artist: 'Adele', albumBetyg: '4/5'),
-          albumRow(context,
+          albumRow(
               albumTitel: 'Easy On Me', artist: 'Adele', albumBetyg: '4/5'),
-          albumRow(context,
+          albumRow(
               albumTitel: 'Easy On Me', artist: 'Adele', albumBetyg: '4/5'),
-          albumRow(context,
+          albumRow(
               albumTitel: 'Easy On Me', artist: 'Adele', albumBetyg: '4/5'),
-          albumRow(context,
+          albumRow(
               albumTitel: 'Easy On Me', artist: 'Adele', albumBetyg: '4/5'),
         ]),
         bottomNavigationBar: BottomNavigationBar(
@@ -82,7 +82,7 @@ class StartSida extends StatelessWidget {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => MinaReviews()),
+                MaterialPageRoute(builder: (context) => AlbumView()),
               );
             }));
   }

@@ -1,22 +1,16 @@
 import 'package:flutter/material.dart';
-import './album_view.dart';
 
-Widget albumRow(BuildContext context,
+Widget albumRow(
     {required String albumTitel, required String artist, var albumBetyg}) {
   return ListTile(
-    leading: Container(
-      height: 30,
-      width: 30,
-      decoration: const BoxDecoration(color: Colors.amber),
-    ),
-    title: Text(albumTitel),
-    subtitle: Text(artist),
-    trailing: Text(albumBetyg),
-    onTap: () {
-      Navigator.push(
-          context, MaterialPageRoute(builder: (context) => AlbumView()));
-    },
-  );
+      leading: Container(
+        height: 30,
+        width: 30,
+        decoration: const BoxDecoration(color: Colors.amber),
+      ),
+      title: Text(albumTitel),
+      subtitle: Text(artist),
+      trailing: Text(albumBetyg));
 }
 
 Widget filterbar() {
@@ -29,22 +23,17 @@ Widget filterbar() {
   );
 }
 
-Widget reviewItem(BuildContext context,
+Widget reviewItem(
     {required String albumTitel, required String artist, var albumBetyg}) {
   return ListTile(
-    leading: Container(
-      height: 30,
-      width: 30,
-      decoration: const BoxDecoration(color: Colors.amber),
-    ),
-    title: Text(albumTitel),
-    subtitle: Text(artist),
-    trailing: Text(albumBetyg),
-    onTap: () {
-      Navigator.push(
-          context, MaterialPageRoute(builder: (context) => AlbumView()));
-    },
-  );
+      leading: Container(
+        height: 30,
+        width: 30,
+        decoration: const BoxDecoration(color: Colors.amber),
+      ),
+      title: Text(albumTitel),
+      subtitle: Text(artist),
+      trailing: Text(albumBetyg));
 }
 
 Widget review(String reviewText) {
