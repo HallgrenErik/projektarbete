@@ -53,14 +53,15 @@ class AlbumView extends StatelessWidget {
               ),
               const ListTile(
                   title: Text(
-                      "Tracklist: \n1 - Hells Bells \n2 - Shoot to Thrill \n3 - What Do You Do With The Money \n4 - Back in Black",
+                      "Tracklist: \n1 - Hells Bells \n2 - Shoot to Thrill \n3 - What Do You Do With The Money \n4 - Givin the Dog a Bone\n5 - Let Me Put My Love Into You\n6 - Back In Black \n7 - You Shook Me All Night Long \n8 - Have a Drink on Me \n9 - Shake a Leg \n10 - Rock and Roll Ain't Noise Pollution",
                       style: TextStyle(fontWeight: FontWeight.bold))),
               Container(height: 10),
               Container(
                   height: 100,
                   width: 300,
                   decoration: BoxDecoration(border: Border.all()),
-                  child: review('Älskar AC/DC!!- 4/5')),
+                  child: review(
+                      'Älskar AC/DC!! Shoot to Thrill är min favorit - 4/5')),
               Container(height: 10),
               Container(
                   height: 100,
