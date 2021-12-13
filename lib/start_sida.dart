@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:my_first_app/album_lista.dart';
-import 'package:my_first_app/avancerad_sokning.dart';
-import 'package:my_first_app/mina_reviews.dart';
+import './album_lista.dart';
+import './avancerad_sokning.dart';
+import './mina_reviews.dart';
 
 class StartSida extends StatelessWidget {
   Widget build(BuildContext context) {
@@ -31,32 +31,33 @@ class StartSida extends StatelessWidget {
             ]),
         body: ListView(children: [
           filterbar(),
-          albumRow(
+          albumRow(context,
               albumTitel: 'Tänd ett Ljus', artist: 'AcDc', albumBetyg: '5/5'),
           albumRow(
+            context,
             albumTitel: 'S/M',
             artist: 'The Weekend',
             albumBetyg: '2.7/5',
           ),
-          albumRow(
+          albumRow(context,
               albumTitel: 'Last Chrismas',
               artist: 'Wham!',
               albumBetyg: '3.4/5'),
-          albumRow(
+          albumRow(context,
               albumTitel: 'Easy On Me', artist: 'Adele', albumBetyg: '4/5'),
-          albumRow(
+          albumRow(context,
               albumTitel: 'Easy On Me', artist: 'Adele', albumBetyg: '4/5'),
-          albumRow(
+          albumRow(context,
               albumTitel: 'Easy On Me', artist: 'Adele', albumBetyg: '4/5'),
-          albumRow(
+          albumRow(context,
               albumTitel: 'Easy On Me', artist: 'Adele', albumBetyg: '4/5'),
-          albumRow(
+          albumRow(context,
               albumTitel: 'Easy On Me', artist: 'Adele', albumBetyg: '4/5'),
-          albumRow(
+          albumRow(context,
               albumTitel: 'Easy On Me', artist: 'Adele', albumBetyg: '4/5'),
-          albumRow(
+          albumRow(context,
               albumTitel: 'Easy On Me', artist: 'Adele', albumBetyg: '4/5'),
-          albumRow(
+          albumRow(context,
               albumTitel: 'Easy On Me', artist: 'Adele', albumBetyg: '4/5'),
         ]),
         bottomNavigationBar: BottomNavigationBar(
