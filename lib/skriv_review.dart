@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_first_app/model.dart';
+import './model.dart';
 
 class SkrivReview extends StatelessWidget {
   Widget build(BuildContext context) {

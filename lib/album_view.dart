@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
-import 'album_lista.dart';
-import 'package:myapp/mina_reviews.dart';
+
+import './album_lista.dart';
+import './mina_reviews.dart';
+
 
 import 'artist_view.dart';
 
