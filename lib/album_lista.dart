@@ -1,4 +1,7 @@
+import 'dart:js';
+
 import 'package:flutter/material.dart';
+import './album_view.dart';
 
 Widget albumRow(
     {required String albumTitel, required String artist, var albumBetyg}) {
@@ -23,17 +26,22 @@ Widget filterbar() {
   );
 }
 
-Widget reviewItem(
+Widget reviewItem(BuildContext context,
     {required String albumTitel, required String artist, var albumBetyg}) {
   return ListTile(
-      leading: Container(
-        height: 30,
-        width: 30,
-        decoration: const BoxDecoration(color: Colors.amber),
-      ),
-      title: Text(albumTitel),
-      subtitle: Text(artist),
-      trailing: Text(albumBetyg));
+    leading: Container(
+      height: 30,
+      width: 30,
+      decoration: const BoxDecoration(color: Colors.amber),
+    ),
+    title: Text(albumTitel),
+    subtitle: Text(artist),
+    trailing: Text(albumBetyg),
+    onTap: () {
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => AlbumView()));
+    },
+  );
 }
 
 Widget review(String reviewText) {

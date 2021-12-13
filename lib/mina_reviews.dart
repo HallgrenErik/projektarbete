@@ -10,14 +10,7 @@ class MinaReviews extends StatelessWidget {
       ),
       body: ListView(
         children: [
-          reviewItem(
-              albumTitel: 'Tänd ett Ljus', artist: 'AcDc', albumBetyg: '5/5'),
           review('detta är en review'),
-          reviewItem(
-            albumTitel: 'S/M',
-            artist: 'The Weekend',
-            albumBetyg: '2.7/5',
-          ),
           review(
               'detta är en reviewdetta är en reviewdetta är en reviewdetta är en reviewdetta är en reviews'),
         ],
