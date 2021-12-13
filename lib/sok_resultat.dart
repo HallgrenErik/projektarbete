@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-
+import 'package:my_first_app/skriv_review.dart';
+import './skriv_review.dart';
 import 'album_lista.dart';
 
 class SokResultat extends StatelessWidget {
@@ -37,6 +38,14 @@ class SokResultat extends StatelessWidget {
               albumTitel: 'Easy On Me', artist: 'Adele', albumBetyg: '4/5'),
           albumRow(
               albumTitel: 'Easy On Me', artist: 'Adele', albumBetyg: '4/5'),
-        ]));
+        ]),
+        floatingActionButton: FloatingActionButton(
+            child: Icon(Icons.add),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => SkrivReview()),
+              );
+            }));
   }
 }
