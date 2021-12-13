@@ -2,14 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import './skriv_review.dart';
 import './album_lista.dart';
-<<<<<<< Updated upstream
-
 import './artist_view.dart';
-=======
-import './mina_reviews.dart';
-
-import 'artist_view.dart';
->>>>>>> Stashed changes
 
 class AlbumView extends StatelessWidget {
   @override
