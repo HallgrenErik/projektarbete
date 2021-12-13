@@ -7,8 +7,9 @@ class SokResultat extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.purple,
           title: Text('Sök Resultat'),
+          centerTitle: true,
+          foregroundColor: Colors.green,
         ),
         body: ListView(children: [
           albumRow(
@@ -40,7 +41,7 @@ class SokResultat extends StatelessWidget {
               albumTitel: 'Easy On Me', artist: 'Adele', albumBetyg: '4/5'),
         ]),
         floatingActionButton: FloatingActionButton(
-            child: Icon(Icons.add),
+            child: Icon(Icons.list, color: Colors.green),
             onPressed: () {
               Navigator.push(
                 context,
