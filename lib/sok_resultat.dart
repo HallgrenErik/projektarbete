@@ -7,41 +7,41 @@ class SokResultat extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.purple,
           title: Text('Sök Resultat'),
+          centerTitle: true,
+          foregroundColor: Colors.green,
         ),
         body: ListView(children: [
-          albumRow(context,
+          albumRow(
               albumTitel: 'Tänd ett Ljus', artist: 'AcDc', albumBetyg: '5/5'),
           albumRow(
-            context,
             albumTitel: 'S/M',
             artist: 'The Weekend',
             albumBetyg: '2.7/5',
           ),
-          albumRow(context,
+          albumRow(
               albumTitel: 'Last Chrismas',
               artist: 'Wham!',
               albumBetyg: '3.4/5'),
-          albumRow(context,
+          albumRow(
               albumTitel: 'Easy On Me', artist: 'Adele', albumBetyg: '4/5'),
-          albumRow(context,
+          albumRow(
               albumTitel: 'Easy On Me', artist: 'Adele', albumBetyg: '4/5'),
-          albumRow(context,
+          albumRow(
               albumTitel: 'Easy On Me', artist: 'Adele', albumBetyg: '4/5'),
-          albumRow(context,
+          albumRow(
               albumTitel: 'Easy On Me', artist: 'Adele', albumBetyg: '4/5'),
-          albumRow(context,
+          albumRow(
               albumTitel: 'Easy On Me', artist: 'Adele', albumBetyg: '4/5'),
-          albumRow(context,
+          albumRow(
               albumTitel: 'Easy On Me', artist: 'Adele', albumBetyg: '4/5'),
-          albumRow(context,
+          albumRow(
               albumTitel: 'Easy On Me', artist: 'Adele', albumBetyg: '4/5'),
-          albumRow(context,
+          albumRow(
               albumTitel: 'Easy On Me', artist: 'Adele', albumBetyg: '4/5'),
         ]),
         floatingActionButton: FloatingActionButton(
-            child: Icon(Icons.add),
+            child: Icon(Icons.list, color: Colors.green),
             onPressed: () {
               Navigator.push(
                 context,

@@ -1,3 +1,5 @@
+// ignore_for_file: import_of_legacy_library_into_null_safe
+
 import 'package:flutter/material.dart';
 import './sok_resultat.dart';
 
@@ -68,11 +70,10 @@ Widget sokKnapp(context) {
 
 Widget skrivRad() {
   return Column(children: [
-    Container(
-      margin: EdgeInsets.all(15),
-      width: 250,
-      height: 250,
-      color: Colors.black,
+    Image.network(
+      'https://www.theaudiodb.com/images/media/album/thumb/rpvuyt1538865109.jpg',
+      height: 200,
+      width: 200,
     ),
     Container(height: 10),
     const Text("Back in Black",
@@ -162,6 +163,8 @@ Widget skrivRad() {
             'ADD',
             style: TextStyle(
               fontSize: 25,
+              fontWeight: FontWeight.bold,
+              color: Colors.green,
             ),
             //textAlign: TextAlign.center,
           ),
