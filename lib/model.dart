@@ -150,6 +150,10 @@ Widget skrivRad() {
         ),
       ],
     ),
+    ElevatedButton(
+        onPressed: null,
+        style: ElevatedButton.styleFrom(shadowColor: Colors.red),
+        child: Text('ADD')),
     Container(
         height: 50,
         width: 150,

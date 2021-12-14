@@ -11,36 +11,39 @@ class SokResultat extends StatelessWidget {
           centerTitle: true,
         ),
         body: ListView(children: [
-          albumRow(
+          albumRow(context,
               albumTitel: 'Tänd ett Ljus', artist: 'AcDc', albumBetyg: '5/5'),
           albumRow(
+            context,
             albumTitel: 'S/M',
             artist: 'The Weekend',
             albumBetyg: '2.7/5',
           ),
-          albumRow(
+          albumRow(context,
               albumTitel: 'Last Chrismas',
               artist: 'Wham!',
               albumBetyg: '3.4/5'),
-          albumRow(
+          albumRow(context,
               albumTitel: 'Easy On Me', artist: 'Adele', albumBetyg: '4/5'),
-          albumRow(
+          albumRow(context,
               albumTitel: 'Easy On Me', artist: 'Adele', albumBetyg: '4/5'),
-          albumRow(
+          albumRow(context,
               albumTitel: 'Easy On Me', artist: 'Adele', albumBetyg: '4/5'),
-          albumRow(
+          albumRow(context,
               albumTitel: 'Easy On Me', artist: 'Adele', albumBetyg: '4/5'),
-          albumRow(
+          albumRow(context,
               albumTitel: 'Easy On Me', artist: 'Adele', albumBetyg: '4/5'),
-          albumRow(
+          albumRow(context,
               albumTitel: 'Easy On Me', artist: 'Adele', albumBetyg: '4/5'),
-          albumRow(
+          albumRow(context,
               albumTitel: 'Easy On Me', artist: 'Adele', albumBetyg: '4/5'),
-          albumRow(
+          albumRow(context,
               albumTitel: 'Easy On Me', artist: 'Adele', albumBetyg: '4/5'),
         ]),
         floatingActionButton: FloatingActionButton(
-            child: Icon(Icons.list, color: Colors.green),
+            child: Icon(
+              Icons.list,
+            ),
             onPressed: () {
               Navigator.push(
                 context,

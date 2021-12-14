@@ -37,34 +37,35 @@ class StartSida extends StatelessWidget {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => AlbumView()));
               },
-              child: albumRow(
+              child: albumRow(context,
                   albumTitel: 'Back in Black',
                   artist: 'AC/DC',
                   albumBetyg: '3/5')),
           albumRow(
+            context,
             albumTitel: 'S/M',
             artist: 'The Weekend',
             albumBetyg: '2.7/5',
           ),
-          albumRow(
+          albumRow(context,
               albumTitel: 'Last Chrismas',
               artist: 'Wham!',
               albumBetyg: '3.4/5'),
-          albumRow(
+          albumRow(context,
               albumTitel: 'Easy On Me', artist: 'Adele', albumBetyg: '4/5'),
-          albumRow(
+          albumRow(context,
               albumTitel: 'Easy On Me', artist: 'Adele', albumBetyg: '4/5'),
-          albumRow(
+          albumRow(context,
               albumTitel: 'Easy On Me', artist: 'Adele', albumBetyg: '4/5'),
-          albumRow(
+          albumRow(context,
               albumTitel: 'Easy On Me', artist: 'Adele', albumBetyg: '4/5'),
-          albumRow(
+          albumRow(context,
               albumTitel: 'Easy On Me', artist: 'Adele', albumBetyg: '4/5'),
-          albumRow(
+          albumRow(context,
               albumTitel: 'Easy On Me', artist: 'Adele', albumBetyg: '4/5'),
-          albumRow(
+          albumRow(context,
               albumTitel: 'Easy On Me', artist: 'Adele', albumBetyg: '4/5'),
-          albumRow(
+          albumRow(context,
               albumTitel: 'Easy On Me', artist: 'Adele', albumBetyg: '4/5'),
         ]),
         floatingActionButton: FloatingActionButton(
