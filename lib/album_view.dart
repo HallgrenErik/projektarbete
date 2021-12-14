@@ -4,6 +4,9 @@ import 'skriv_review.dart';
 import 'album_lista.dart';
 
 import 'artist_view.dart';
+import './skriv_review.dart';
+import './album_lista.dart';
+import './artist_view.dart';
 
 class AlbumView extends StatelessWidget {
   @override
@@ -39,7 +42,7 @@ class AlbumView extends StatelessWidget {
               TextButton(
                 onPressed: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => artistView()));
+                      MaterialPageRoute(builder: (context) => ArtistView()));
                 },
                 child: Text("AC/DC"),
                 style: TextButton.styleFrom(

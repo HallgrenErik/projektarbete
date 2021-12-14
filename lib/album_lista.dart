@@ -1,16 +1,29 @@
 import 'package:flutter/material.dart';
 
-Widget albumRow(
+import 'album_view.dart';
+
+Widget albumRow(BuildContext context,
     {required String albumTitel, required String artist, var albumBetyg}) {
   return ListTile(
-      leading: Container(
-        height: 30,
-        width: 30,
-        decoration: const BoxDecoration(color: Colors.amber),
-      ),
-      title: Text(albumTitel),
-      subtitle: Text(artist),
-      trailing: Text(albumBetyg));
+    leading: Image.network(
+      'https://www.theaudiodb.com/images/media/album/thumb/rpvuyt1538865109.jpg',
+      height: 100,
+      width: 100,
+    ),
+    title: Text(albumTitel),
+    subtitle: Text(artist),
+    trailing: Text(albumBetyg),
+    onTap: () {
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => AlbumView()));
+    },
+  );
+}
+
+Widget songRow({required String songTitel}) {
+  return ListTile(
+    title: Text(songTitel),
+  );
 }
 
 Widget filterbar() {
@@ -25,11 +38,12 @@ Widget filterbar() {
 
 Widget reviewItem(
     {required String albumTitel, required String artist, var albumBetyg}) {
+  //lägga till användarnamn /melwin
   return ListTile(
-      leading: Container(
-        height: 30,
-        width: 30,
-        decoration: const BoxDecoration(color: Colors.amber),
+      leading: Image.network(
+        'https://www.theaudiodb.com/images/media/album/thumb/rpvuyt1538865109.jpg',
+        height: 100,
+        width: 100,
       ),
       title: Text(albumTitel),
       subtitle: Text(artist),
@@ -38,6 +52,6 @@ Widget reviewItem(
 
 Widget review(String reviewText) {
   return ListTile(
-    title: Text('"$reviewText"'),
+    title: Text('$reviewText'),
   );
 }

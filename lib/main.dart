@@ -13,6 +13,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.grey,
       ),
+      theme: ThemeData(primarySwatch: Colors.purple),
       title: 'Start Sida',
       home: StartSida(),
     );
