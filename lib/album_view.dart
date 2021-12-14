@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
-import 'package:myapp/Projekt/skriv_review.dart';
+import 'skriv_review.dart';
 import 'album_lista.dart';
 
 import 'artist_view.dart';

@@ -11,11 +11,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.purple,
+        primarySwatch: Colors.grey,
       ),
       title: 'Start Sida',
       home: StartSida(),
     );
   }
 }
-// sebbe testar 
