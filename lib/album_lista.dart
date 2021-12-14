@@ -37,13 +37,35 @@ Widget filterbar() {
   return Container(
     child: Text(
       'Topp baserat på x',
-      style: TextStyle(fontSize: 18),
+      style: TextStyle(fontSize: 14),
     ),
     alignment: Alignment.center,
     height: 30,
     width: 400,
-    decoration: BoxDecoration(color: Colors.grey),
+    decoration: BoxDecoration(color: Colors.white),
   );
+}
+
+Widget filter() {
+  var aa;
+  return DropdownButton(
+      //På något sätt skapa en hintext om att filter finns här + ta bort den lilla gråa triangeln om möjligt
+      value: aa,
+      style: const TextStyle(color: Colors.black),
+      alignment: Alignment.center,
+      underline: Container(
+        height: 2,
+        color: Colors.white,
+      ),
+      items: const [
+        DropdownMenuItem(
+            value: Alignment.topCenter, child: Text('Bäst Rating')),
+        DropdownMenuItem(
+            value: Alignment.topCenter, child: Text('Sämst Rating')),
+        DropdownMenuItem(
+            value: Alignment.topLeft, child: Text('Antal Recensioner')),
+      ],
+      onChanged: (value) {});
 }
 
 Widget reviewItem(

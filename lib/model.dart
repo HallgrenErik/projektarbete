@@ -57,8 +57,20 @@ Widget inputGenre() {
   );
 }
 
+Widget sokKnapp(context) {
+  return ElevatedButton(
+      child: Text('SÖK'),
+      onPressed: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => SokResultat()),
+        );
+      });
+}
+
 Widget skrivRad() {
   return Column(children: [
+    Container(height: 10),
     Image.network(
       'https://www.theaudiodb.com/images/media/album/thumb/rpvuyt1538865109.jpg',
       height: 200,
@@ -72,25 +84,26 @@ Widget skrivRad() {
     const Text("AC/DC"),
     Container(
       margin: const EdgeInsets.all(30),
-      decoration:
-          BoxDecoration(border: Border.all(color: Colors.black, width: 3)),
-      child: Padding(
-        padding: const EdgeInsets.only(left: 20),
+      decoration: BoxDecoration(
+          border: Border.all(color: Colors.black, width: 3),
+          borderRadius: BorderRadius.circular(10)),
+      child: const Padding(
+        padding: EdgeInsets.only(left: 20),
         child: TextField(
-          decoration:
-              const InputDecoration(hintText: "Valfritt: skriv användarnamn"),
+          decoration: InputDecoration(hintText: "Valfritt: skriv användarnamn"),
         ),
       ),
     ),
     Container(
       height: 100,
       margin: const EdgeInsets.all(5),
-      decoration:
-          BoxDecoration(border: Border.all(color: Colors.black, width: 3)),
-      child: Padding(
-        padding: const EdgeInsets.only(left: 20),
+      decoration: BoxDecoration(
+          border: Border.all(color: Colors.black, width: 3),
+          borderRadius: BorderRadius.circular(10)),
+      child: const Padding(
+        padding: EdgeInsets.only(left: 20),
         child: TextField(
-          decoration: const InputDecoration(hintText: "Skriv en recension"),
+          decoration: InputDecoration(hintText: "Skriv en recension"),
         ),
       ),
     ),
@@ -116,7 +129,7 @@ Widget iconKnapp() {
     icon: const Icon(
       Icons.star,
       color: Colors.yellow,
-      size: 50,
+      size: 40,
     ),
     onPressed: () {},
   );

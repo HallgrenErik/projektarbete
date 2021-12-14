@@ -4,6 +4,7 @@ import 'model.dart';
 class SkrivReview extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor: Colors.purple[100],
         appBar: AppBar(
           title: Text('Skriv review'),
           centerTitle: true,

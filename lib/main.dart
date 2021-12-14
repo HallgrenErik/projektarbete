@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(primarySwatch: Colors.purple),
       title: 'Start Sida',
-      home: StartSida(),
+      home: const Startsida(),
     );
   }
 }
