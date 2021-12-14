@@ -37,7 +37,7 @@ Widget filterbar() {
   return Container(
     child: Text(
       'Topp baserat på x',
-      style: TextStyle(fontSize: 34),
+      style: TextStyle(fontSize: 18),
     ),
     alignment: Alignment.center,
     height: 30,

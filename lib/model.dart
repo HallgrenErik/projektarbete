@@ -57,17 +57,6 @@ Widget inputGenre() {
   );
 }
 
-Widget sokKnapp(context) {
-  return FloatingActionButton(
-      child: Text('SÖK'),
-      onPressed: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => SokResultat()),
-        );
-      });
-}
-
 Widget skrivRad() {
   return Column(children: [
     Image.network(

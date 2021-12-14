@@ -15,13 +15,12 @@ class AvanceradSokning extends StatelessWidget {
           inputYear(),
           inputAlbum(),
           inputArtist(),
-          sokKnapp(context),
           ElevatedButton(
               onPressed: () {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => SokResultat()));
               },
-              child: Text('hej'))
+              child: Text('SÖK'))
         ],
       ),
     );
