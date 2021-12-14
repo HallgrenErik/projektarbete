@@ -25,7 +25,7 @@ Widget filterbar() {
     alignment: Alignment.center,
     height: 30,
     width: 400,
-    decoration: BoxDecoration(color: Colors.green),
+    decoration: BoxDecoration(color: Colors.grey),
   );
 }
 

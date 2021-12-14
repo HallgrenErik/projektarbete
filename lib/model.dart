@@ -164,7 +164,6 @@ Widget skrivRad() {
             style: TextStyle(
               fontSize: 25,
               fontWeight: FontWeight.bold,
-              color: Colors.green,
             ),
             //textAlign: TextAlign.center,
           ),

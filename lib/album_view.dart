@@ -1,22 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
-import 'skriv_review.dart';
-import 'album_lista.dart';
-
-import 'artist_view.dart';
+import './skriv_review.dart';
+import './album_lista.dart';
+import './artist_view.dart';
 
 class AlbumView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          foregroundColor: Colors.green,
-          title: const Text(
-            "ALBUM",
-          ),
-          centerTitle: true,
-        ),
-        body: SingleChildScrollView(
+            title: const Text(
+              "ALBUM",
+            ),
+            centerTitle: true,
+            actions: const [
+              IconButton(
+                  icon: Icon(Icons.menu_outlined),
+                  tooltip: 'menu',
+                  onPressed: null),
+            ]),
+        body: Center(
           child: Column(
             children: [
               Container(
@@ -35,70 +38,27 @@ class AlbumView extends StatelessWidget {
               TextButton(
                 onPressed: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => artistView()));
+                      MaterialPageRoute(builder: (context) => ArtistView()));
                 },
                 child: Text("AC/DC"),
                 style: TextButton.styleFrom(
                     textStyle: const TextStyle(
-                  fontSize: 25,
-                  fontWeight: FontWeight.bold,
-                )),
+                        fontSize: 25, fontWeight: FontWeight.bold)),
               ),
               const Text(
-                "Betyg: 3/5",
+                "3/5",
                 style: TextStyle(
                     fontSize: 20,
-                    color: Colors.orange,
+                    color: Colors.red,
                     fontWeight: FontWeight.bold),
               ),
-              const ListTile(
-                  title: Text(
-                      "Tracklist: \n1 - Hells Bells \n2 - Shoot to Thrill \n3 - What Do You Do With The Money \n4 - Givin the Dog a Bone\n5 - Let Me Put My Love Into You\n6 - Back In Black \n7 - You Shook Me All Night Long \n8 - Have a Drink on Me \n9 - Shake a Leg \n10 - Rock and Roll Ain't Noise Pollution",
-                      style: TextStyle(fontWeight: FontWeight.bold))),
-              Container(height: 10),
-              Container(
-                  height: 100,
-                  width: 300,
-                  decoration: BoxDecoration(
-                    border: Border.all(),
-                    borderRadius: BorderRadius.circular(15.0),
-                  ),
-                  child: review(
-                      'Älskar AC/DC!! Shoot to Thrill är min favorit - 4/5')),
-              Container(height: 10),
-              Container(
-                  height: 100,
-                  width: 300,
-                  decoration: BoxDecoration(
-                    border: Border.all(),
-                    borderRadius: BorderRadius.circular(15.0),
-                  ),
-                  child: review(' Föredrar pop, men ändå ok album- 3/5'),
-                  margin: EdgeInsets.only(bottom: 10)),
-              Container(
-                  height: 50,
-                  width: 150,
-                  margin: EdgeInsets.all(10),
-                  decoration: BoxDecoration(
-                    color: Colors.purple,
-                  ),
-                  child: Align(
-                    alignment: Alignment.center,
-                    child: Text(
-                      'ALL REVIEWS',
-                      style: TextStyle(
-                        fontSize: 15,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.green,
-                      ),
-                      //textAlign: TextAlign.center,
-                    ),
-                  )),
+              const ListTile(title: Text("1 - Denna låt")),
+              review('Detta är en review - 4/5')
             ],
           ),
         ),
         floatingActionButton: FloatingActionButton(
-            child: Icon(Icons.add, color: Colors.green),
+            child: Icon(Icons.add),
             onPressed: () {
               Navigator.push(
                 context,
