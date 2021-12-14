@@ -17,7 +17,7 @@ class AlbumView extends StatelessWidget {
               IconButton(
                   icon: Icon(Icons.menu_outlined),
                   tooltip: 'menu',
-                  onPressed: null),
+                  onPressed: (null)),
             ]),
         body: Center(
           child: Column(

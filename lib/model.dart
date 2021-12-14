@@ -108,69 +108,27 @@ Widget skrivRad() {
     Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        IconButton(
-          icon: const Icon(
-            Icons.star,
-            color: Colors.yellow,
-            size: 50,
-          ),
-          onPressed: null,
-        ),
-        IconButton(
-          icon: const Icon(
-            Icons.star,
-            color: Colors.yellow,
-            size: 50,
-          ),
-          onPressed: null,
-        ),
-        IconButton(
-          icon: const Icon(
-            Icons.star,
-            color: Colors.yellow,
-            size: 50,
-          ),
-          onPressed: null,
-        ),
-        IconButton(
-          icon: const Icon(
-            Icons.star,
-            color: Colors.purple,
-            size: 50,
-          ),
-          onPressed: null,
-        ),
-        IconButton(
-          icon: const Icon(
-            Icons.star,
-            color: Colors.purple,
-            size: 50,
-          ),
-          onPressed: null,
-        ),
+        iconKnapp(),
+        iconKnapp(),
+        iconKnapp(),
+        iconKnapp(),
+        iconKnapp(),
       ],
     ),
     ElevatedButton(
-        onPressed: null,
-        style: ElevatedButton.styleFrom(shadowColor: Colors.red),
+        onPressed: () {},
+        style: ElevatedButton.styleFrom(primary: Colors.purple),
         child: Text('ADD')),
-    Container(
-        height: 50,
-        width: 150,
-        margin: EdgeInsets.all(50),
-        decoration: BoxDecoration(
-          color: Colors.purple,
-        ),
-        child: Align(
-          alignment: Alignment.center,
-          child: Text(
-            'ADD',
-            style: TextStyle(
-              fontSize: 25,
-              fontWeight: FontWeight.bold,
-            ),
-            //textAlign: TextAlign.center,
-          ),
-        )),
   ]);
+}
+
+Widget iconKnapp() {
+  return IconButton(
+    icon: const Icon(
+      Icons.star,
+      color: Colors.yellow,
+      size: 50,
+    ),
+    onPressed: () {},
+  );
 }

@@ -32,41 +32,7 @@ class StartSida extends StatelessWidget {
             ]),
         body: ListView(children: [
           filterbar(),
-          TextButton(
-              onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => AlbumView()));
-              },
-              child: albumRow(context,
-                  albumTitel: 'Back in Black',
-                  artist: 'AC/DC',
-                  albumBetyg: '3/5')),
-          albumRow(
-            context,
-            albumTitel: 'S/M',
-            artist: 'The Weekend',
-            albumBetyg: '2.7/5',
-          ),
-          albumRow(context,
-              albumTitel: 'Last Chrismas',
-              artist: 'Wham!',
-              albumBetyg: '3.4/5'),
-          albumRow(context,
-              albumTitel: 'Easy On Me', artist: 'Adele', albumBetyg: '4/5'),
-          albumRow(context,
-              albumTitel: 'Easy On Me', artist: 'Adele', albumBetyg: '4/5'),
-          albumRow(context,
-              albumTitel: 'Easy On Me', artist: 'Adele', albumBetyg: '4/5'),
-          albumRow(context,
-              albumTitel: 'Easy On Me', artist: 'Adele', albumBetyg: '4/5'),
-          albumRow(context,
-              albumTitel: 'Easy On Me', artist: 'Adele', albumBetyg: '4/5'),
-          albumRow(context,
-              albumTitel: 'Easy On Me', artist: 'Adele', albumBetyg: '4/5'),
-          albumRow(context,
-              albumTitel: 'Easy On Me', artist: 'Adele', albumBetyg: '4/5'),
-          albumRow(context,
-              albumTitel: 'Easy On Me', artist: 'Adele', albumBetyg: '4/5'),
+          albumRow(context, 'albumTitel', 'artistName', 5),
         ]),
         floatingActionButton: FloatingActionButton(
             child: Icon(
