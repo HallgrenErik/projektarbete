@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/Projekt/album_view.dart';
-import 'package:myapp/Projekt/mina_reviews.dart';
+import './album_view.dart';
+import './mina_reviews.dart';
 import 'album_lista.dart';
 import 'artist_view.dart';
 import 'avancerad_sokning.dart';
@@ -9,7 +9,6 @@ class StartSida extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-            foregroundColor: Colors.green,
             centerTitle: true,
             leading: IconButton(
                 icon: Icon(Icons.search),
@@ -69,7 +68,9 @@ class StartSida extends StatelessWidget {
               albumTitel: 'Easy On Me', artist: 'Adele', albumBetyg: '4/5'),
         ]),
         floatingActionButton: FloatingActionButton(
-            child: Icon(Icons.list, color: Colors.green),
+            child: Icon(
+              Icons.list,
+            ),
             onPressed: () {
               Navigator.push(
                 context,

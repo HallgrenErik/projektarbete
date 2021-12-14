@@ -5,7 +5,6 @@ class SkrivReview extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          foregroundColor: Colors.green,
           title: Text('Skriv review'),
           centerTitle: true,
         ),

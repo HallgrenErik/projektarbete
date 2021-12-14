@@ -5,8 +5,6 @@ class MinaReviews extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        foregroundColor: Colors.green,
-        backgroundColor: Colors.purple,
         centerTitle: true,
         title: Text('Mina Reviews'),
       ),

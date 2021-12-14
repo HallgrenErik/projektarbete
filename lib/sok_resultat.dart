@@ -9,7 +9,6 @@ class SokResultat extends StatelessWidget {
         appBar: AppBar(
           title: Text('Sök Resultat'),
           centerTitle: true,
-          foregroundColor: Colors.green,
         ),
         body: ListView(children: [
           albumRow(

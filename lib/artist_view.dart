@@ -3,13 +3,12 @@ import 'package:flutter/painting.dart';
 import 'album_lista.dart';
 import 'mina_reviews.dart';
 
-class artistView extends StatelessWidget {
+class ArtistView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text("ARTIST"),
-        foregroundColor: Colors.green,
         centerTitle: true,
       ),
       body: SingleChildScrollView(
