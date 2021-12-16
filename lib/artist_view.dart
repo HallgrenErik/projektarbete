@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
-import 'album_funktioner.dart';
+import 'album_lista.dart';
 import 'mina_reviews.dart';
 
 class ArtistView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.purple[100],
       appBar: AppBar(
         title: const Text("ARTIST"),
         centerTitle: true,

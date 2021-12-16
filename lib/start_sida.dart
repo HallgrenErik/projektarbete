@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import './album_view.dart';
 import './mina_reviews.dart';
-import 'album_funktioner.dart';
+import 'album_lista.dart';
 import 'artist_view.dart';
 import 'avancerad_sokning.dart';
 import 'start_sida2.dart';
@@ -27,7 +27,6 @@ class _MyStatefulWidgetState extends State<Startsida>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.purple[200],
       appBar: AppBar(
         centerTitle: true,
         title: const Text("GLITTER",
