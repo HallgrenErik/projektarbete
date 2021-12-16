@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import './album_view.dart';
 import './mina_reviews.dart';
-import 'album_lista.dart';
+import 'album_funktioner.dart';
 import 'artist_view.dart';
 import 'avancerad_sokning.dart';
 

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'skriv_review.dart';
 import './skriv_review.dart';
-import 'album_lista.dart';
+import 'album_funktioner.dart';
 
 class SokResultat extends StatelessWidget {
   Widget build(BuildContext context) {

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'album_lista.dart';
+import 'album_funktioner.dart';
 
 class MinaReviews extends StatelessWidget {
   const MinaReviews({Key? key}) : super(key: key);
