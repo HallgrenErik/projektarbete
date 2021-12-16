@@ -6,7 +6,6 @@ import './sok_resultat.dart';
 class AvanceradSokning extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.purple[100],
       appBar: AppBar(
         title: Text('Avancerad sökning'),
       ),

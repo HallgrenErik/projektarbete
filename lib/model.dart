@@ -1,13 +1,13 @@
 // ignore_for_file: import_of_legacy_library_into_null_safe
 
 import 'package:flutter/material.dart';
-import './sok_resultat.dart';
+import '../sok_resultat.dart';
 
 Widget inputYear() {
   return Container(
     margin: const EdgeInsets.all(30),
-    decoration:
-        BoxDecoration(border: Border.all(color: Colors.black, width: 3)),
+    decoration: BoxDecoration(
+        border: Border.all(color: Colors.black, width: 3), color: Colors.white),
     child: Padding(
       padding: const EdgeInsets.only(left: 20),
       child: TextField(
@@ -21,8 +21,8 @@ Widget inputYear() {
 Widget inputAlbum() {
   return Container(
     margin: const EdgeInsets.all(30),
-    decoration:
-        BoxDecoration(border: Border.all(color: Colors.black, width: 3)),
+    decoration: BoxDecoration(
+        border: Border.all(color: Colors.black, width: 3), color: Colors.white),
     child: Padding(
       padding: const EdgeInsets.only(left: 20),
       child: TextField(
@@ -35,8 +35,8 @@ Widget inputAlbum() {
 Widget inputArtist() {
   return Container(
     margin: const EdgeInsets.all(30),
-    decoration:
-        BoxDecoration(border: Border.all(color: Colors.black, width: 3)),
+    decoration: BoxDecoration(
+        border: Border.all(color: Colors.black, width: 3), color: Colors.white),
     child: Padding(
       padding: const EdgeInsets.only(left: 20),
       child: TextField(
@@ -48,6 +48,7 @@ Widget inputArtist() {
 
 Widget inputGenre() {
   return PopupMenuButton(
+    color: Colors.white,
     onSelected: null,
     itemBuilder: (context) => [
       // ignore: prefer_const_constructors
@@ -80,17 +81,19 @@ Widget skrivRad() {
     const Text("Back in Black",
         style: TextStyle(
           fontSize: 20,
+          color: Colors.white,
         )),
-    const Text("AC/DC"),
+    const Text("AC/DC", style: TextStyle(color: Colors.white)),
     Container(
       margin: const EdgeInsets.all(30),
       decoration: BoxDecoration(
+          color: Colors.white,
           border: Border.all(color: Colors.black, width: 3),
           borderRadius: BorderRadius.circular(10)),
       child: const Padding(
         padding: EdgeInsets.only(left: 20),
         child: TextField(
-          decoration: InputDecoration(hintText: "Valfritt: skriv användarnamn"),
+          decoration: InputDecoration(hintText: "Optional: Write Username"),
         ),
       ),
     ),
@@ -98,12 +101,13 @@ Widget skrivRad() {
       height: 100,
       margin: const EdgeInsets.all(5),
       decoration: BoxDecoration(
+          color: Colors.white,
           border: Border.all(color: Colors.black, width: 3),
           borderRadius: BorderRadius.circular(10)),
       child: const Padding(
         padding: EdgeInsets.only(left: 20),
         child: TextField(
-          decoration: InputDecoration(hintText: "Skriv en recension"),
+          decoration: InputDecoration(hintText: "Write a Review"),
         ),
       ),
     ),
