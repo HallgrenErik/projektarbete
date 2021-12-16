@@ -12,17 +12,4 @@ class AlbumItem {
     this.betyg,
     this.review,
   );
-
-  static AlbumItem fromJson(Map<String, dynamic> json) {
-    return AlbumItem(
-      albumTitle: json['strAlbum'],
-      artistName: json['strArtist'],
-    );
-  }
-}
-
-class MyState extends ChangeNotifier {
-  List<AlbumItem> list = [];
-
-  List<AlbumItem> get lista => list;
 }
