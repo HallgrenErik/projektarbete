@@ -1,7 +1,25 @@
 import 'package:flutter/material.dart';
 import './album_item.dart';
-
 import 'album_view.dart';
+
+class AlbumLista extends StatefulWidget {
+  final List<AlbumItem> list;
+
+  AlbumLista(this.list);
+
+  @override
+  State<AlbumLista> createState() => _AlbumListaState();
+}
+
+class _AlbumListaState extends State<AlbumLista> {
+  Widget build(BuildContext context) {
+    return ListView.builder(
+      itemBuilder: (context, index) => albumRow( context, widget.list[index,]),
+      itemCount: widget.list.length,
+    );
+  }
+
+
 
 Widget albumRow(
   context,
