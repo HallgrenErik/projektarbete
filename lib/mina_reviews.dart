@@ -2,12 +2,11 @@ import 'package:flutter/material.dart';
 import 'album_lista.dart';
 
 class MinaReviews extends StatelessWidget {
+  const MinaReviews({Key? key}) : super(key: key);
+
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        title: Text('Mina Reviews'),
-      ),
+      backgroundColor: Colors.purple[100],
       body: ListView(
         children: [
           reviewItem(

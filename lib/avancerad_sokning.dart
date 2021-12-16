@@ -6,23 +6,18 @@ import './sok_resultat.dart';
 class AvanceradSokning extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.purple[100],
       appBar: AppBar(
         title: Text('Avancerad sökning'),
       ),
-      body: Column(
-        children: [
+      body: SingleChildScrollView(
+        child: Column(children: [
           inputGenre(),
           inputYear(),
           inputAlbum(),
           inputArtist(),
           sokKnapp(context),
-          ElevatedButton(
-              onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => SokResultat()));
-              },
-              child: Text('hej'))
-        ],
+        ]),
       ),
     );
   }

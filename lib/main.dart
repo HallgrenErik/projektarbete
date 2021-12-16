@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       ),
       theme: ThemeData(primarySwatch: Colors.purple),
       title: 'Start Sida',
-      home: StartSida(),
+      home: const Startsida(),
     );
   }
 }
