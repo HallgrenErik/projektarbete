@@ -28,7 +28,6 @@ class _MyStatefulWidgetState extends State<Startsida>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.purple[200],
       appBar: AppBar(
         centerTitle: true,
         title: const Text("GLITTER",

@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'skriv_review.dart';
-import './skriv_review.dart';
-import 'album_lista.dart';
+import '../skriv_review.dart';
+import '../skriv_review.dart';
+import '../album_lista.dart';
 
 class SokResultat extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text('Sök Resultat'),
+          title: Text('Search Results'),
           centerTitle: true,
         ),
         body: ListView(children: []),

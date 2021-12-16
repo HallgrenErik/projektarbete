@@ -6,13 +6,12 @@ class MinaReviews extends StatelessWidget {
 
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.purple[100],
       body: ListView(
         children: [
           reviewItem(
               albumTitel: 'Tänd ett Ljus', artist: 'AcDc', albumBetyg: '5/5'),
           review('detta är en review'),
-          const Divider(),
+          const Divider(color: Colors.white),
           reviewItem(
             albumTitel: 'S/M',
             artist: 'The Weekend',

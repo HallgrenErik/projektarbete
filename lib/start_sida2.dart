@@ -12,13 +12,12 @@ class Mainpage extends StatelessWidget {
 
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.purple[100],
         body: ListView(children: [
-          filterbar(),
-          filter(),
-          albumRow(context, 'albumTitel', 'artistName', 5),
-          const Divider(),
-          albumRow(context, 'albumTitel', 'artistName', 5),
-        ]));
+      filterbar(),
+      filter(),
+      albumRow(context, 'albumTitel', 'artistName', 5),
+      const Divider(color: Colors.white),
+      albumRow(context, 'albumTitel', 'artistName', 5),
+    ]));
   }
 }

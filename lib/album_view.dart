@@ -12,7 +12,6 @@ class AlbumView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.purple[100],
         appBar: AppBar(
           title: const Text(
             "ALBUM",
@@ -32,9 +31,9 @@ class AlbumView extends StatelessWidget {
               Container(height: 10),
               const Text("Back in Black",
                   style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 25,
-                  )),
+                      fontWeight: FontWeight.bold,
+                      fontSize: 25,
+                      color: Colors.white)),
               TextButton(
                 onPressed: () {
                   Navigator.push(context,
@@ -43,19 +42,22 @@ class AlbumView extends StatelessWidget {
                 child: Text("AC/DC"),
                 style: TextButton.styleFrom(
                     textStyle: const TextStyle(
-                        fontSize: 25, fontWeight: FontWeight.bold)),
+                        fontSize: 25,
+                        fontWeight: FontWeight.bold,
+                        decoration: TextDecoration.underline)),
               ),
               const Text(
                 "Rating - 3/5",
                 style: TextStyle(
                     fontSize: 20,
-                    color: Colors.red,
+                    color: Colors.white,
                     fontWeight: FontWeight.bold),
               ),
               const ListTile(
                   title: Text(
-                      "Tracklist: \n1 - Hells Bells \n2 - Shoot to Thrill \n3 - What Do You Do With The Money \n4 - Givin the Dog a Bone\n5 - Let Me Put My Love Into You\n6 - Back In Black \n7 - You Shook Me All Night Long \n8 - Have a Drink on Me \n9 - Shake a Leg \n10 - Rock and Roll Ain't Noise Pollution",
-                      style: TextStyle(fontWeight: FontWeight.bold))),
+                      "Track List: \n1 - Hells Bells \n2 - Shoot to Thrill \n3 - What Do You Do With The Money \n4 - Givin the Dog a Bone\n5 - Let Me Put My Love Into You\n6 - Back In Black \n7 - You Shook Me All Night Long \n8 - Have a Drink on Me \n9 - Shake a Leg \n10 - Rock and Roll Ain't Noise Pollution",
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold, color: Colors.white))),
               Container(height: 10),
               Container(
                 height: 100,
@@ -78,7 +80,7 @@ class AlbumView extends StatelessWidget {
           ),
         ),
         floatingActionButton: FloatingActionButton(
-            child: Icon(Icons.add, color: Colors.black),
+            child: Icon(Icons.add, color: Colors.white70),
             onPressed: () {
               Navigator.push(
                 context,
