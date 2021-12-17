@@ -9,7 +9,7 @@ class AlbumFetcher {
     http.Response response = await http.get(Uri.parse(API_URL));
     var jsonData = response.body;
     var obj = jsonDecode(jsonData);
-    print(obj['album'][0]['strAlbum']);
+    print(obj['album'][0]['strAlbumThumb']);
     return AlbumItem.fromJson(obj['album'][0]);
   }
 
@@ -30,15 +30,21 @@ class AlbumFetcher {
 class AlbumItem {
   String albumTitel;
   String artistName;
+  String cover;
+  String description;
 
   AlbumItem({
     required this.albumTitel,
     required this.artistName,
+    required this.cover,
+    required this.description,
   });
   static AlbumItem fromJson(Map<String, dynamic> json) {
     return AlbumItem(
       albumTitel: json["strAlbum"],
       artistName: json["strArtist"],
+      cover: json['strAlbumThumb'],
+      description: json['strDescriptionEN'],
     );
   }
 }

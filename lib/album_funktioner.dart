@@ -5,9 +5,7 @@ import 'album_view.dart';
 
 Widget albumRow(
   context,
-  String albumTitel,
-  String artistName,
-  double betyg,
+  AlbumItem item,
 ) {
   return ListTile(
     leading: Image.network(
@@ -15,8 +13,8 @@ Widget albumRow(
       height: 100,
       width: 100,
     ),
-    title: Text(albumTitel),
-    subtitle: Text(artistName),
+    title: Text(item.albumTitel),
+    subtitle: Text(item.artistName),
     trailing: Text(
       'Den har 4.5',
     ),
