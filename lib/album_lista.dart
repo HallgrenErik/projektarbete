@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import './album_item.dart';
+import 'api_album.dart';
 
 import 'album_view.dart';
 
