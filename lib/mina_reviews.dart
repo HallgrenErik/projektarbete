@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'album_lista.dart';
 import 'api_album.dart';
+import './api_artist.dart';
 
 class MinaReviews extends StatelessWidget {
   const MinaReviews({Key? key}) : super(key: key);
@@ -26,7 +27,7 @@ class MinaReviews extends StatelessWidget {
         floatingActionButton: FloatingActionButton(
             child: Icon(Icons.add, color: Colors.white70),
             onPressed: () {
-              AlbumFetcher.getAlbum();
+              ArtistFetcher.getArtist();
             }));
   }
 }
