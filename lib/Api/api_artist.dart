@@ -16,12 +16,7 @@ class ArtistFetcher {
     //print(obj['artist']);
     //print(obj['artist']['bio']['summary']);
     //print(obj['artist']['name']);
-    return ArtistItem.fromJson(obj['artist']);
-  }
-
-  static void getArtist() async {
-    var resultat = await fetchArtist();
-    print(resultat);
+    return ArtistItem.artistFromJson(obj['artist']);
   }
 }
 
@@ -33,7 +28,7 @@ class ArtistItem {
     required this.artistName,
     required this.artistDescription,
   });
-  static ArtistItem fromJson(Map<String, dynamic> json) {
+  static ArtistItem artistFromJson(Map<String, dynamic> json) {
     return ArtistItem(
       artistName: json['name'],
       artistDescription: json['bio']['summary'],
