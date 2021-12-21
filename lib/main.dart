@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
-import './start_sida.dart';
+import 'package:my_first_app/my_state.dart';
+import 'package:provider/provider.dart';
+import 'Screens/start_sida.dart';
 
 void main() {
-  runApp(MyApp());
+  var state = MyState();
+  state.hamtaLista();
+
+  runApp(ChangeNotifierProvider(create: (context) => state, child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {

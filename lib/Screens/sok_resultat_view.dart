@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:my_first_app/api_album.dart';
-import '../skriv_review.dart';
-import '../skriv_review.dart';
-import '../album_lista.dart';
+import 'package:provider/provider.dart';
+import '../../skriv_review.dart';
+import '../album_sok_list.dart';
+import '../my_state.dart';
 
-class SokResultat extends StatelessWidget {
+class SokResultatView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
           title: Text('Search Results'),
           centerTitle: true,
         ),
-        body: ListView(children: []),
+        body: Consumer<MyState>(
+            builder: (context, state, child) => AlbumSokList(state.list)),
         floatingActionButton: FloatingActionButton(
             child: Icon(
               Icons.list,

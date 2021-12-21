@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
-import 'album_lista.dart';
-import 'mina_reviews.dart';
+import '../filter_mm.dart';
+import 'mina_reviews_view.dart';
 
 class ArtistView extends StatelessWidget {
   @override

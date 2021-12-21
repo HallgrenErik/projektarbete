@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'model.dart';
-import './model.dart';
-import './sok_resultat.dart';
+import '../model.dart';
+import '../model.dart';
+import 'sok_resultat_view.dart';
 
 class AvanceradSokning extends StatelessWidget {
   Widget build(BuildContext context) {

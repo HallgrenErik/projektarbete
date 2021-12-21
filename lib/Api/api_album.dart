@@ -2,6 +2,8 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
+import '../Items/album_item.dart';
+
 const API_URL =
     'http://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=$API_KEY&artist=Cher&album=Believe&format=json';
 String API_SOKURL =
@@ -16,33 +18,6 @@ class AlbumFetcher {
     print(obj['album']['name']);
     print(obj['album']['image'][4]['#text']);
     print(obj['album']['wiki']['summary']);
-    return AlbumItem.fromJson(obj['album']);
-  }
-
-  static void getAlbum() async {
-    var resultat = await fetchAlbum();
-    print(resultat);
-  }
-}
-
-class AlbumItem {
-  String albumTitel;
-  String artistName;
-  String cover;
-  String description;
-
-  AlbumItem({
-    required this.albumTitel,
-    required this.artistName,
-    required this.cover,
-    required this.description,
-  });
-  static AlbumItem fromJson(Map<String, dynamic> json) {
-    return AlbumItem(
-      albumTitel: json["name"],
-      artistName: json["artist"],
-      cover: json['image'][4]['#text'],
-      description: json['wiki']['summary'],
-    );
+    return AlbumItem.albumFromJson(obj['album']);
   }
 }

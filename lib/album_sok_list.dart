@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
-import './Api/api_album.dart';
+import 'package:my_first_app/Items/sok_item.dart';
 
-class AlbumList extends StatefulWidget {
-  final List<AlbumItem> list;
+class AlbumSokList extends StatefulWidget {
+  final List<SokItem> list;
 
-  AlbumList(this.list);
+  AlbumSokList(this.list);
 
   @override
-  State<AlbumList> createState() => _AlbumListState();
+  State<AlbumSokList> createState() => _AlbumSokListState();
 }
 
-class _AlbumListState extends State<AlbumList> {
+class _AlbumSokListState extends State<AlbumSokList> {
   Widget build(BuildContext context) {
     return ListView.builder(
       itemBuilder: (context, index) => sokrad(context, widget.list[index]),
@@ -21,7 +21,7 @@ class _AlbumListState extends State<AlbumList> {
   Widget sokrad(context, rad) {
     return ListTile(
       leading: Image.network(
-        'https://www.theaudiodb.com/images/media/album/thumb/rpvuyt1538865109.jpg',
+        rad.coverUrl,
         height: 100,
         width: 100,
       ),

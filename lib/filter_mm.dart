@@ -1,29 +1,4 @@
 import 'package:flutter/material.dart';
-import 'api_album.dart';
-
-import 'album_view.dart';
-
-Widget albumRow(
-  context,
-  String albumTitel,
-  String artistName,
-  double betyg,
-) {
-  return ListTile(
-    leading: Image.network(
-      'https://www.theaudiodb.com/images/media/album/thumb/rpvuyt1538865109.jpg',
-      height: 100,
-      width: 100,
-    ),
-    title: Text(albumTitel, style: TextStyle(color: Colors.white)),
-    subtitle: Text(artistName, style: TextStyle(color: Colors.white)),
-    trailing: Text('Den har 4.5', style: TextStyle(color: Colors.white)),
-    onTap: () {
-      Navigator.push(
-          context, MaterialPageRoute(builder: (context) => AlbumView()));
-    },
-  );
-}
 
 Widget songRow({required String songTitel}) {
   return ListTile(

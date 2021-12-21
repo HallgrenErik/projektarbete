@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
-import './skriv_review.dart';
-import './album_lista.dart';
-import './artist_view.dart';
+import '../skriv_review.dart';
+import '../filter_mm.dart';
+import 'artist_info_view.dart';
 
-class AlbumView extends StatelessWidget {
+class AlbumInfoView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
