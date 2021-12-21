@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
-import 'album_info_view.dart';
-import './mina_reviews.dart';
 import 'filter_mm.dart';
-import 'artist_info_view.dart';
-import 'avancerad_sokning.dart';
 
 //byta namn på denna, kopplad till första sidan
 

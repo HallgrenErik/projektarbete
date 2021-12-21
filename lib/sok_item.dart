@@ -8,8 +8,8 @@ class SokItem {
   });
   static SokItem sokItemFromJson(Map<String, dynamic> json) {
     return SokItem(
-      albumTitel: json["name"],
-      artistName: json["artist"],
+      albumTitel: json['results']['albummatches']['album'][8]['artist'],
+      artistName: json['results']['albummatches']['album'][8]['name'],
     );
   }
 }
