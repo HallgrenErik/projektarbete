@@ -25,11 +25,19 @@ class _AlbumSokListState extends State<AlbumSokList> {
         height: 100,
         width: 100,
       ),
-      title: Text(rad.albumTitel),
-      subtitle: Text(rad.artistName),
+      title: Text(
+        rad.albumTitel,
+        style: textStyle(),
+      ),
+      subtitle: Text(rad.artistName, style: textStyle()),
       trailing: Text(
         'Den har 4.5',
+        style: textStyle(),
       ),
     );
   }
+}
+
+TextStyle textStyle() {
+  return TextStyle(color: Colors.white);
 }
