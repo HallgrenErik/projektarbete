@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'filter_mm.dart';
+import '../filter_mm.dart';
 
 //byta namn på denna, kopplad till första sidan
 

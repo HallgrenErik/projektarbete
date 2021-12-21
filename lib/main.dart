@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_first_app/my_state.dart';
 import 'package:provider/provider.dart';
-import './start_sida.dart';
+import 'Screens/start_sida.dart';
 
 void main() {
   var state = MyState();

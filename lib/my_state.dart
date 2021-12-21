@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:my_first_app/Api/api_album.dart';
 import 'package:my_first_app/Api/api_sok_resultat.dart';
-import 'package:my_first_app/sok_item.dart';
-import 'album_item.dart';
+import 'package:my_first_app/Items/sok_item.dart';
 
 class MyState extends ChangeNotifier {
   List<SokItem> list = [];

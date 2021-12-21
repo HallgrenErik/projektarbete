@@ -1,6 +1,6 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-import 'package:my_first_app/sok_item.dart';
+import 'package:my_first_app/Items/sok_item.dart';
 
 String sokning = 'abc';
 String API_SOKURL =

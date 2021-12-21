@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import './mina_reviews.dart';
-import 'avancerad_sokning.dart';
+import 'mina_reviews_view.dart';
+import 'avancerad_sokning_view.dart';
 import 'start_sida2.dart';
 
 class Startsida extends StatefulWidget {

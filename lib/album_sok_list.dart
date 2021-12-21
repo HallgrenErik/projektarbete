@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:my_first_app/sok_item.dart';
+import 'package:my_first_app/Items/sok_item.dart';
 
-import 'album_item.dart';
+import 'Items/album_item.dart';
 
 class AlbumSokList extends StatefulWidget {
   final List<SokItem> list;

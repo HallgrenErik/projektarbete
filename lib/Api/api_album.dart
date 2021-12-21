@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
-import '../album_item.dart';
+import '../Items/album_item.dart';
 
 const API_URL =
     'http://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=$API_KEY&artist=Cher&album=Believe&format=json';

@@ -2,6 +2,8 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
+import '../Items/artist_item.dart';
+
 const API_URLartist =
     'http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=Cher&api_key=$API_KEY&format=json';
 String API_SOKURL =
@@ -17,21 +19,5 @@ class ArtistFetcher {
     //print(obj['artist']['bio']['summary']);
     //print(obj['artist']['name']);
     return ArtistItem.artistFromJson(obj['artist']);
-  }
-}
-
-class ArtistItem {
-  String artistName;
-  String artistDescription;
-
-  ArtistItem({
-    required this.artistName,
-    required this.artistDescription,
-  });
-  static ArtistItem artistFromJson(Map<String, dynamic> json) {
-    return ArtistItem(
-      artistName: json['name'],
-      artistDescription: json['bio']['summary'],
-    );
   }
 }
