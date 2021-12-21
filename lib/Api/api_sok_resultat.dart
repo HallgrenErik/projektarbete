@@ -13,7 +13,8 @@ class SokLista {
     //print(response.body);
     var json = jsonDecode(response.body);
     print(json['results']['albummatches']['album'][8]['artist']);
-    return json.map<SokItem>((data) {
+    return json['results']['albummatches']['album'].map<SokItem>((data) {
+      print(data);
       return SokItem.sokItemFromJson(data);
     }).toList();
   }

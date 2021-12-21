@@ -3,15 +3,18 @@ import 'package:flutter/material.dart';
 class SokItem {
   String albumTitel;
   String artistName;
+  String? coverUrl;
 
   SokItem({
     required this.albumTitel,
     required this.artistName,
+    this.coverUrl,
   });
-  static SokItem sokItemFromJson(Map<ListBody, dynamic> json) {
+  static SokItem sokItemFromJson(Map<String, dynamic> json) {
     return SokItem(
-      albumTitel: json['albummatches']['album'][8]['artist'],
-      artistName: json['albummatches']['album'][8]['name'],
+      albumTitel: json['name'],
+      artistName: json['artist'],
+      coverUrl: json['image'][1]['#text'],
     );
   }
 }

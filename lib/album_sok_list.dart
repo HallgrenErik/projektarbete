@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_first_app/Items/sok_item.dart';
 
-import 'Items/album_item.dart';
-
 class AlbumSokList extends StatefulWidget {
   final List<SokItem> list;
 
@@ -23,7 +21,7 @@ class _AlbumSokListState extends State<AlbumSokList> {
   Widget sokrad(context, rad) {
     return ListTile(
       leading: Image.network(
-        'https://www.theaudiodb.com/images/media/album/thumb/rpvuyt1538865109.jpg',
+        rad.coverUrl,
         height: 100,
         width: 100,
       ),
