@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:my_first_app/Items/sok_item.dart';
 
-String sokning = 'erik';
+String sokning = 'ola';
 String API_SOKURL =
     'http://ws.audioscrobbler.com/2.0/?method=album.search&album=$sokning&api_key=$API_KEY&format=json';
 const API_KEY = 'c995db7b4ae865f6a4243e90eddc9593';

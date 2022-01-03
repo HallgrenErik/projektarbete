@@ -11,10 +11,7 @@ class AvanceradSokning extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Column(children: [
-          inputGenre(),
-          inputYear(),
-          inputAlbum(),
-          inputArtist(),
+          inputSokning(),
           sokKnapp(context),
         ]),
       ),

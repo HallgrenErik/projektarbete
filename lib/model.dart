@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 import 'Screens/sok_resultat_view.dart';
 
-Widget inputYear() {
+Widget inputSokning() {
   return Container(
     margin: const EdgeInsets.all(30),
     decoration: BoxDecoration(
@@ -11,50 +11,9 @@ Widget inputYear() {
     child: Padding(
       padding: const EdgeInsets.only(left: 20),
       child: TextField(
-        decoration:
-            const InputDecoration(hintText: "Enter year here! Format: YYYY"),
+        decoration: const InputDecoration(hintText: "Enter search word here!"),
       ),
     ),
-  );
-}
-
-Widget inputAlbum() {
-  return Container(
-    margin: const EdgeInsets.all(30),
-    decoration: BoxDecoration(
-        border: Border.all(color: Colors.black, width: 3), color: Colors.white),
-    child: Padding(
-      padding: const EdgeInsets.only(left: 20),
-      child: TextField(
-        decoration: const InputDecoration(hintText: "Enter Album name here!"),
-      ),
-    ),
-  );
-}
-
-Widget inputArtist() {
-  return Container(
-    margin: const EdgeInsets.all(30),
-    decoration: BoxDecoration(
-        border: Border.all(color: Colors.black, width: 3), color: Colors.white),
-    child: Padding(
-      padding: const EdgeInsets.only(left: 20),
-      child: TextField(
-        decoration: const InputDecoration(hintText: "Enter Artist name here!"),
-      ),
-    ),
-  );
-}
-
-Widget inputGenre() {
-  return PopupMenuButton(
-    color: Colors.white,
-    onSelected: null,
-    itemBuilder: (context) => [
-      // ignore: prefer_const_constructors
-      PopupMenuItem(child: Text('HipHop')),
-      PopupMenuItem(child: Text('Jazz')),
-    ],
   );
 }
 
