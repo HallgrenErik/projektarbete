@@ -6,6 +6,8 @@ import 'album_lista.dart';
 import 'artist_view.dart';
 import './skriv_review.dart';
 import 'filter_mm.dart';
+import '../skriv_review.dart';
+import '../filter_mm.dart';
 import 'artist_info_view.dart';
 
 class AlbumInfoView extends StatelessWidget {
