@@ -3,31 +3,6 @@
 import 'package:flutter/material.dart';
 import 'Screens/sok_resultat_view.dart';
 
-Widget inputSokning() {
-  return Container(
-    margin: const EdgeInsets.all(30),
-    decoration: BoxDecoration(
-        border: Border.all(color: Colors.black, width: 3), color: Colors.white),
-    child: Padding(
-      padding: const EdgeInsets.only(left: 20),
-      child: TextField(
-        decoration: const InputDecoration(hintText: "Enter search word here!"),
-      ),
-    ),
-  );
-}
-
-Widget sokKnapp(context) {
-  return ElevatedButton(
-      child: Text('SÖK'),
-      onPressed: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => SokResultatView()),
-        );
-      });
-}
-
 Widget skrivRad() {
   return Column(children: [
     Container(height: 10),

@@ -20,9 +20,9 @@ class AlbumFetcher {
     print(json['album']['wiki']['published']);
     print(json['album']['image'][4]['#text']);
     print(json['album']['wiki']['summary']);
-    return json['album']<AlbumItem>((data) {
+    return json['album'].map<AlbumItem>((data) {
       print(data);
-      return AlbumItem.albumFromJson(json['album']);
+      return AlbumItem.albumFromJson(data);
     }).toList();
   }
 }

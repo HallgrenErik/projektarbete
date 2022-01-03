@@ -20,7 +20,7 @@ class MyState extends ChangeNotifier {
   }
 
   Future hamtaAlbum() async {
-    List<AlbumItem> albumList = await AlbumFetcher.fetchAlbum();
+    List<AlbumItem> albumLista = await AlbumFetcher.fetchAlbum();
     albumList = albumLista;
     notifyListeners();
   }
