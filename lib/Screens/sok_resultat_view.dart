@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import '../../skriv_review.dart';
 import '../album_sok_list.dart';
 import '../my_state.dart';
+import 'album_info_view.dart';
 
 class SokResultatView extends StatelessWidget {
   Widget build(BuildContext context) {
@@ -12,7 +13,7 @@ class SokResultatView extends StatelessWidget {
           centerTitle: true,
         ),
         body: Consumer<MyState>(
-            builder: (context, state, child) => AlbumSokList(state.list)),
+            builder: (context, state, child) => AlbumSokList(state.sokList)),
         floatingActionButton: FloatingActionButton(
             child: Icon(
               Icons.list,
@@ -20,7 +21,7 @@ class SokResultatView extends StatelessWidget {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => SkrivReview()),
+                MaterialPageRoute(builder: (context) => AlbumInfoView()),
               );
             }));
   }
