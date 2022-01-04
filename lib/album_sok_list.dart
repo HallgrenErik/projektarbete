@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:my_first_app/Items/sok_item.dart';
 
+import 'Screens/album_info_view.dart';
+
 class AlbumSokList extends StatefulWidget {
   final List<SokItem> list;
 
@@ -34,6 +36,10 @@ class _AlbumSokListState extends State<AlbumSokList> {
         'Den har 4.5',
         style: textStyle(),
       ),
+      onTap: () {
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => AlbumInfoView()));
+      },
     );
   }
 }
