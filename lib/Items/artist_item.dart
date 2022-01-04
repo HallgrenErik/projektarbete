@@ -9,7 +9,7 @@ class ArtistItem {
   static ArtistItem artistItemFromJson(Map<String, dynamic> json) {
     return ArtistItem(
       artistName: json['name'],
-      artistDescription: json['bio']['summary'],
+      artistDescription: json['bio']['content'],
     );
   }
 }

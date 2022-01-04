@@ -44,7 +44,7 @@ class _MyStatefulWidgetState extends State<Startsida>
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => AvanceradSokning()),
+                  MaterialPageRoute(builder: (context) => Sokning()),
                 );
               }),
         ],

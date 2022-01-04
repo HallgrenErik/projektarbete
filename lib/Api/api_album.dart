@@ -4,17 +4,10 @@ import 'package:http/http.dart' as http;
 
 import '../Items/album_item.dart';
 
-const String artistNamn = 'Cher';
-const String albumNamn = 'Believe';
-const API_URL =
-    'http://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=$API_KEY&artist=$artistNamn&album=$albumNamn&format=json';
-String API_SOKURL =
-    'http://ws.audioscrobbler.com/2.0/?method=album.search&album=abc&api_key=$API_KEY&format=json';
-const API_KEY = 'c995db7b4ae865f6a4243e90eddc9593';
-
 class AlbumFetcher {
   static Future<AlbumItem> fetchAlbum() async {
-    http.Response response = await http.get(Uri.parse(API_URL));
+    http.Response response = await http.get(Uri.parse(
+        'http://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=c995db7b4ae865f6a4243e90eddc9593&artist=Cher&album=Believe&format=json'));
     var json = jsonDecode(response.body);
 
     print(json['album']['name']);
