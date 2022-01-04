@@ -31,7 +31,7 @@ class _AlbumListState extends State<AlbumList> {
             height: 300,
           ),
           Container(height: 10),
-          const Text("Back in Black",
+          Text(rad.albumTitel,
               style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 25,
@@ -41,7 +41,7 @@ class _AlbumListState extends State<AlbumList> {
               Navigator.push(context,
                   MaterialPageRoute(builder: (context) => ArtistView()));
             },
-            child: Text("AC/DC"),
+            child: Text(rad.artistName),
             style: TextButton.styleFrom(
                 textStyle: const TextStyle(
                     fontSize: 25,
@@ -53,9 +53,8 @@ class _AlbumListState extends State<AlbumList> {
             style: TextStyle(
                 fontSize: 20, color: Colors.white, fontWeight: FontWeight.bold),
           ),
-          const ListTile(
-              title: Text(
-                  "Track List: \n1 - Hells Bells \n2 - Shoot to Thrill \n3 - What Do You Do With The Money \n4 - Givin the Dog a Bone\n5 - Let Me Put My Love Into You\n6 - Back In Black \n7 - You Shook Me All Night Long \n8 - Have a Drink on Me \n9 - Shake a Leg \n10 - Rock and Roll Ain't Noise Pollution",
+          ListTile(
+              title: Text(rad.description,
                   style: TextStyle(
                       fontWeight: FontWeight.bold, color: Colors.white))),
           Container(height: 10),
