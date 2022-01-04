@@ -13,7 +13,7 @@ String API_SOKURL =
 const API_KEY = 'c995db7b4ae865f6a4243e90eddc9593';
 
 class AlbumFetcher {
-  static Future<List<AlbumItem>> fetchAlbum() async {
+  static Future<AlbumItem> fetchAlbum() async {
     http.Response response = await http.get(Uri.parse(API_URL));
     var json = jsonDecode(response.body);
 
@@ -22,9 +22,7 @@ class AlbumFetcher {
     print(json['album']['wiki']['published']);
     print(json['album']['image'][4]['#text']);
     print(json['album']['wiki']['summary']);
-    return json['album'].map<AlbumItem>((data) {
-      print(data);
-      return AlbumItem.albumFromJson(data);
-    }).toList();
+
+    return AlbumItem.albumFromJson(json['album']);
   }
 }

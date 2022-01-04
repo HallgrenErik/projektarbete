@@ -5,9 +5,9 @@ import 'Screens/artist_info_view.dart';
 import 'filter_mm.dart';
 
 class AlbumList extends StatefulWidget {
-  final List<AlbumItem> list;
+  final AlbumItem? album;
 
-  AlbumList(this.list);
+  AlbumList(this.album);
 
   @override
   State<AlbumList> createState() => _AlbumListState();
@@ -15,13 +15,11 @@ class AlbumList extends StatefulWidget {
 
 class _AlbumListState extends State<AlbumList> {
   Widget build(BuildContext context) {
-    return ListView.builder(
-      itemBuilder: (context, index) => artistrad(context, widget.list[index]),
-      itemCount: widget.list.length,
-    );
+    return artistrad(context, widget.album);
   }
 
   Widget artistrad(context, rad) {
+    if (rad == null) return Container();
     return SingleChildScrollView(
       child: Column(
         children: [

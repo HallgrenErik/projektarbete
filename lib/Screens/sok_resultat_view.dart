@@ -13,7 +13,7 @@ class SokResultatView extends StatelessWidget {
         centerTitle: true,
       ),
       body: Consumer<MyState>(
-          builder: (context, state, child) => AlbumSokList(state.sokList)),
+          builder: (context, state, child) => AlbumSokList(state.soklist)),
     );
   }
 }

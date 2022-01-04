@@ -5,23 +5,23 @@ import 'package:my_first_app/Items/album_item.dart';
 import 'package:my_first_app/Items/sok_item.dart';
 
 class MyState extends ChangeNotifier {
-  List<AlbumItem> albumList = [];
+  AlbumItem? _album = null;
 
-  List<AlbumItem> get albumLista => albumList;
+  AlbumItem? get album => _album;
 
-  List<SokItem> sokList = [];
+  List<SokItem> _sokList = [];
 
-  List<SokItem> get lista => sokList;
+  List<SokItem> get soklist => _sokList;
 
   Future hamtaLista() async {
-    List<SokItem> sokLista = await SokLista.fetchAlbumList();
-    sokList = sokLista;
+    List<SokItem> sokList = await SokLista.fetchAlbumList();
+    _sokList = sokList;
     notifyListeners();
   }
 
   Future hamtaAlbum() async {
-    List<AlbumItem> albumLista = await AlbumFetcher.fetchAlbum();
-    albumList = albumLista;
+    AlbumItem album = await AlbumFetcher.fetchAlbum();
+    _album = album;
     notifyListeners();
   }
 }

@@ -4,14 +4,12 @@ import 'package:my_first_app/Items/sok_item.dart';
 import 'package:my_first_app/Screens/sok_resultat_view.dart';
 import '../Screens/avancerad_sokning_view.dart';
 
-String sokning = 'hello';
-String API_SOKURL =
-    'http://ws.audioscrobbler.com/2.0/?method=album.search&album=$sokning&api_key=$API_KEY&format=json';
 const API_KEY = 'c995db7b4ae865f6a4243e90eddc9593';
 
 class SokLista {
-  static Future<List<SokItem>> fetchAlbumList() async {
-    http.Response response = await http.get(Uri.parse(API_SOKURL));
+  static Future<List<SokItem>> fetchAlbumList(sokord) async {
+    http.Response response = await http.get(Uri.parse(
+        'http://ws.audioscrobbler.com/2.0/?method=album.search&album=$sokord&api_key=$API_KEY&format=json'));
     //print(response.body);
     var json = jsonDecode(response.body);
     print(json['results']['albummatches']['album'][8]['artist']);

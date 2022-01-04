@@ -16,7 +16,7 @@ class AlbumInfoView extends StatelessWidget {
         centerTitle: true,
       ),
       body: Consumer<MyState>(
-          builder: (context, state, child) => AlbumList(state.albumLista)),
+          builder: (context, state, child) => AlbumList(state.album)),
     );
   }
 }
