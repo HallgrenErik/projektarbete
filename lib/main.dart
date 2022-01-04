@@ -7,6 +7,7 @@ void main() {
   var state = MyState();
   state.hamtaLista();
   state.hamtaAlbum();
+  state.hamtaArtist();
 
   runApp(ChangeNotifierProvider(create: (context) => state, child: MyApp()));
 }
