@@ -1,18 +1,18 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import 'Items/artist_item.dart';
+import '../Items/artist_item.dart';
 
-class ArtistList extends StatefulWidget {
+class ArtistState extends StatefulWidget {
   ArtistItem? artist;
 
-  ArtistList(this.artist, {Key? key}) : super(key: key);
+  ArtistState(this.artist, {Key? key}) : super(key: key);
 
   @override
-  State<ArtistList> createState() => _ArtistListState();
+  State<ArtistState> createState() => _ArtistState();
 }
 
-class _ArtistListState extends State<ArtistList> {
+class _ArtistState extends State<ArtistState> {
   @override
   Widget build(BuildContext context) {
     return _artistrad(context, widget.artist);

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../../skriv_review.dart';
-import '../album_sok_list.dart';
-import '../my_state.dart';
+import '../Review/skriv_review.dart';
+import '../States/album_sok.dart';
+import '../States/my_state.dart';
 import 'album_info_view.dart';
 
 class SokResultatView extends StatelessWidget {
@@ -13,7 +13,7 @@ class SokResultatView extends StatelessWidget {
         centerTitle: true,
       ),
       body: Consumer<MyState>(
-          builder: (context, state, child) => AlbumSokList(state.soklist)),
+          builder: (context, state, child) => AlbumSok(state.soklist)),
     );
   }
 }

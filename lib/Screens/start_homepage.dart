@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'mina_reviews_view.dart';
-import 'avancerad_sokning_view.dart';
-import 'start_sida2.dart';
+import 'sokning_view.dart';
+import 'start_review.dart';
 
 class Startsida extends StatefulWidget {
   const Startsida({Key? key}) : super(key: key);

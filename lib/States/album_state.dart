@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:my_first_app/Items/album_item.dart';
-import './Items/artist_item.dart';
-import 'Screens/artist_info_view.dart';
-import 'filter_mm.dart';
+import '../Items/artist_item.dart';
+import '../Screens/artist_info_view.dart';
+import '../model.dart';
 
-class AlbumList extends StatefulWidget {
+class AlbumState extends StatefulWidget {
   final AlbumItem? album;
 
-  AlbumList(this.album);
+  AlbumState(this.album);
 
   @override
-  State<AlbumList> createState() => _AlbumListState();
+  State<AlbumState> createState() => _AlbumState();
 }
 
-class _AlbumListState extends State<AlbumList> {
+class _AlbumState extends State<AlbumState> {
   Widget build(BuildContext context) {
     return _albumrad(context, widget.album);
   }
