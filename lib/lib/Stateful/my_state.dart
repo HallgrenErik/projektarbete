@@ -11,7 +11,7 @@ class MyState extends ChangeNotifier {
 
   List<SokItem> get soklist => _sokList;
 
-  ArtistItem? _artist;
+  ArtistItem? _artist = null;
 
   ArtistItem? get artist => _artist;
 
@@ -22,8 +22,8 @@ class MyState extends ChangeNotifier {
   }
 
   Future hamtaArtist() async {
-    ArtistItem _artist = await ArtistFetcher.fetchArtist();
-    _artist = _artist;
+    ArtistItem artist = await ArtistFetcher.fetchArtist();
+    _artist = artist;
     notifyListeners();
   }
 }

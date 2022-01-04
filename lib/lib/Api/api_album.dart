@@ -5,7 +5,7 @@ import 'package:http/http.dart' as http;
 import '../Items/album_item.dart';
 
 const String artistNamn = 'Cher';
-const String albumNamn = 'Belive';
+const String albumNamn = 'Believe';
 const API_URL =
     'http://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=$API_KEY&artist=$artistNamn&album=$albumNamn&format=json';
 String API_SOKURL =

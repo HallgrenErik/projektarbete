@@ -16,12 +16,12 @@ class AlbumList extends StatefulWidget {
 class _AlbumListState extends State<AlbumList> {
   Widget build(BuildContext context) {
     return ListView.builder(
-      itemBuilder: (context, index) => artistrad(context, widget.list[index]),
+      itemBuilder: (context, index) => albumrad(context, widget.list[index]),
       itemCount: widget.list.length,
     );
   }
 
-  Widget artistrad(context, rad) {
+  Widget albumrad(context, rad) {
     return SingleChildScrollView(
       child: Column(
         children: [
