@@ -7,10 +7,10 @@ import 'package:provider/provider.dart';
 const API_KEY = 'c995db7b4ae865f6a4243e90eddc9593';
 
 class SokLista {
-  String sokord = 'hell';
-  static Future<List<SokItem>> fetchAlbumList(sokord) async {
+  String sokord = 'hej';
+  static Future<List<SokItem>> fetchAlbumList() async {
     http.Response response = await http.get(Uri.parse(
-        'http://ws.audioscrobbler.com/2.0/?method=album.search&album=$sokord&api_key=c995db7b4ae865f6a4243e90eddc9593&format=json'));
+        'http://ws.audioscrobbler.com/2.0/?method=album.search&album=ord&api_key=c995db7b4ae865f6a4243e90eddc9593&format=json'));
     //print(response.body);
 
     var json = jsonDecode(response.body);

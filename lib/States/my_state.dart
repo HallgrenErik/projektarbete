@@ -22,7 +22,7 @@ class MyState extends ChangeNotifier {
   ArtistItem? get artist => _artist;
 
   Future hamtaLista() async {
-    List<SokItem> sokList = await SokLista.fetchAlbumList('abc');
+    List<SokItem> sokList = await SokLista.fetchAlbumList();
     _sokList = sokList;
     notifyListeners();
   }
