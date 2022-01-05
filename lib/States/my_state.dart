@@ -3,6 +3,7 @@ import 'package:my_first_app/Api/api_album.dart';
 import 'package:my_first_app/Api/api_sok_resultat.dart';
 import 'package:my_first_app/Items/album_item.dart';
 import 'package:my_first_app/Items/sok_item.dart';
+import 'package:my_first_app/Screens/sokning_view.dart';
 
 import '../Api/api_artist.dart';
 import '../Items/artist_item.dart';
@@ -21,7 +22,7 @@ class MyState extends ChangeNotifier {
   ArtistItem? get artist => _artist;
 
   Future hamtaLista() async {
-    List<SokItem> sokList = await SokLista.fetchAlbumList();
+    List<SokItem> sokList = await SokLista.fetchAlbumList('abc');
     _sokList = sokList;
     notifyListeners();
   }
