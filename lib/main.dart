@@ -9,7 +9,12 @@ void main() {
   state.hamtaAlbum();
   state.hamtaArtist();
 
-  runApp(ChangeNotifierProvider(create: (context) => state, child: MyApp()));
+  runApp(MultiProvider(
+    providers: [
+      ChangeNotifierProvider(create: (context) => state, child: MyApp()),
+    ],
+    child: MyApp(),
+  ));
 }
 
 class MyApp extends StatelessWidget {
