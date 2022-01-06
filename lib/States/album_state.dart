@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:my_first_app/Items/album_item.dart';
-import '../Items/artist_item.dart';
 import '../Screens/artist_info_view.dart';
 import '../model.dart';
 

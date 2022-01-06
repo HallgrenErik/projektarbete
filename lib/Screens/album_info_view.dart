@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_first_app/States/my_state.dart';
-
 import 'package:provider/provider.dart';
-import '../States/album_state.dart';
 import '../States/album_state.dart';
 
 class AlbumInfoView extends StatelessWidget {

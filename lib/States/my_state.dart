@@ -1,12 +1,8 @@
-import 'dart:js';
-
 import 'package:flutter/material.dart';
 import 'package:my_first_app/Api/api_album.dart';
 import 'package:my_first_app/Api/api_sok_resultat.dart';
 import 'package:my_first_app/Items/album_item.dart';
 import 'package:my_first_app/Items/sok_item.dart';
-import 'package:my_first_app/Screens/sokning_view.dart';
-
 import '../Api/api_artist.dart';
 import '../Items/artist_item.dart';
 

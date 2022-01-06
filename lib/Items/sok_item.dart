@@ -1,5 +1,3 @@
-import 'package:flutter/material.dart';
-
 class SokItem {
   String albumTitel;
   String artistName;
