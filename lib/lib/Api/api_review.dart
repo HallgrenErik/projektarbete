@@ -11,12 +11,12 @@ class ReviewAPI {
   static Future<List<Review>> addItem(Review review) async {
     Map<String, dynamic> json = Review.toJson(review);
     var bodyString = jsonEncode(json);
-    var respone = await http.post(
+    var response = await http.post(
       Uri.parse('$apiURL/todos?key=$apiKey'),
       body: bodyString,
       headers: {'Content-Type': 'application/json'},
     );
-    bodyString = respone.body;
+    bodyString = response.body;
     var list = jsonDecode(bodyString);
     return list.map<Review>((data) {
       return Review.fromJson(data);
