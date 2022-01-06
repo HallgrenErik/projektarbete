@@ -1,40 +1,50 @@
-// ignore_for_file: camel_case_types
-
 import 'package:flutter/material.dart';
-import 'package:myapp/Projekt/lib/Items/sok_item.dart';
-import '../model.dart';
+import '../States/my_state.dart';
+import 'package:provider/provider.dart';
+
 import 'sok_resultat_view.dart';
 
-class sokningView extends StatefulWidget {
-  const sokningView({Key? key}) : super(key: key);
-
+class Sokning extends StatefulWidget {
   @override
-  _sokningViewState createState() => _sokningViewState();
+  State<Sokning> createState() => SokningState();
 }
 
-class _sokningViewState extends State<sokningView> {
+class SokningState extends State<Sokning> {
+  final myController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
-    var myController;
+    String sokord;
     return Scaffold(
       appBar: AppBar(
         title: Text('Sökning'),
       ),
       body: SingleChildScrollView(
         child: Column(children: [
-          TextField(
-              controller: myController,
-              decoration: const InputDecoration(
-                  hintText: "Vem vill du hitta", border: OutlineInputBorder())),
+          Container(
+            margin: const EdgeInsets.all(30),
+            decoration: BoxDecoration(
+                border: Border.all(color: Colors.black, width: 3),
+                color: Colors.white),
+            child: Padding(
+              padding: const EdgeInsets.only(left: 20),
+              child: TextField(
+                controller: myController,
+                decoration:
+                    const InputDecoration(hintText: "Enter search word here!"),
+              ),
+            ),
+          ),
           ElevatedButton(
               child: Text('SÖK'),
               onPressed: () {
+                Provider.of<Sokord>(context, listen: false)
+                    .setWord('', myController.text);
                 Navigator.push(
-                  //hur pushar man input till annan class, (API Sök resultat)
                   context,
                   MaterialPageRoute(builder: (context) => SokResultatView()),
                 );
-              })
+              }),
         ]),
       ),
     );

@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
 import '../Items/sok_item.dart';
+import '../Screens/album_info_view.dart';
 
-class AlbumSokList extends StatefulWidget {
+class AlbumSok extends StatefulWidget {
   final List<SokItem> list;
 
-  AlbumSokList(this.list);
+  AlbumSok(this.list);
 
   @override
-  State<AlbumSokList> createState() => _AlbumSokListState();
+  State<AlbumSok> createState() => _AlbumSokListState();
 }
 
-class _AlbumSokListState extends State<AlbumSokList> {
+class _AlbumSokListState extends State<AlbumSok> {
   Widget build(BuildContext context) {
     return ListView.builder(
       itemBuilder: (context, index) => sokrad(context, widget.list[index]),
@@ -34,6 +35,10 @@ class _AlbumSokListState extends State<AlbumSokList> {
         'Den har 4.5',
         style: textStyle(),
       ),
+      onTap: () {
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => AlbumInfoView()));
+      },
     );
   }
 }

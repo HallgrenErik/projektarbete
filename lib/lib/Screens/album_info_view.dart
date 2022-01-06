@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/painting.dart';
+import '../States/my_state.dart';
+
 import 'package:provider/provider.dart';
-import '../Stateful/album_list.dart';
-import '../Stateful/my_state.dart';
-import '../skriv_review.dart';
-import '../filter_mm.dart';
-import 'artist_info_view.dart';
+import '../States/album_state.dart';
+import '../States/album_state.dart';
 
 class AlbumInfoView extends StatelessWidget {
   @override
@@ -17,7 +15,8 @@ class AlbumInfoView extends StatelessWidget {
         ),
         centerTitle: true,
       ),
-      body: Consumer<MyState>(builder: (context, state, child) => AlbumList()),
+      body: Consumer<MyState>(
+          builder: (context, state, child) => AlbumState(state.album)),
     );
   }
 }

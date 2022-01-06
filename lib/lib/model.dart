@@ -1,78 +1,63 @@
-// ignore_for_file: import_of_legacy_library_into_null_safe
-
 import 'package:flutter/material.dart';
-import 'Screens/sok_resultat_view.dart';
 
-Widget inputYear() {
+Widget songRow({required String songTitel}) {
+  return ListTile(
+    title: Text(songTitel),
+  );
+}
+
+Widget filterbar() {
   return Container(
-    margin: const EdgeInsets.all(30),
-    decoration: BoxDecoration(
-        border: Border.all(color: Colors.black, width: 3), color: Colors.white),
-    child: Padding(
-      padding: const EdgeInsets.only(left: 20),
-      child: TextField(
-        decoration:
-            const InputDecoration(hintText: "Enter year here! Format: YYYY"),
-      ),
+    child: Text(
+      'Top Results',
+      style: TextStyle(fontSize: 14),
     ),
+    alignment: Alignment.center,
+    height: 30,
+    width: 400,
+    decoration: BoxDecoration(color: Colors.white70),
   );
 }
 
-Widget inputAlbum() {
-  return Container(
-    margin: const EdgeInsets.all(30),
-    decoration: BoxDecoration(
-        border: Border.all(color: Colors.black, width: 3), color: Colors.white),
-    child: Padding(
-      padding: const EdgeInsets.only(left: 20),
-      child: TextField(
-        decoration: const InputDecoration(hintText: "Enter Album name here!"),
+Widget filter() {
+  var aa;
+  return DropdownButton(
+      hint: Text("Filter by"),
+      //På något sätt skapa en hintext om att filter finns här + ta bort den lilla gråa triangeln om möjligt
+      value: aa,
+      style: const TextStyle(color: Colors.black),
+      alignment: Alignment.centerRight,
+      underline: Container(
+        height: 2,
+        color: Colors.white70,
       ),
-    ),
-  );
+      items: const [
+        DropdownMenuItem(
+            value: Alignment.topCenter, child: Text('Best Rating')),
+        DropdownMenuItem(
+            value: Alignment.topCenter, child: Text('Worst Rating')),
+        DropdownMenuItem(
+            value: Alignment.topLeft, child: Text('Number of Reviews')),
+      ],
+      onChanged: (value) {});
 }
 
-Widget inputsokning() {
-  var textEditingController;
-  return TextField(
-      controller: textEditingController,
-      decoration: const InputDecoration(
-          hintText: "Vad ska du göra?", border: OutlineInputBorder()));
-}
-
-Widget inputArtist() {
-  return Container(
-    margin: const EdgeInsets.all(30),
-    decoration: BoxDecoration(
-        border: Border.all(color: Colors.black, width: 3), color: Colors.white),
-    child: Padding(
-      padding: const EdgeInsets.only(left: 20),
-      child: TextField(
-        decoration: const InputDecoration(hintText: "Enter Artist name here!"),
+Widget reviewItem(
+    {required String albumTitel, required String artist, var albumBetyg}) {
+  //lägga till användarnamn /melwin
+  return ListTile(
+      leading: Image.network(
+        'https://www.theaudiodb.com/images/media/album/thumb/rpvuyt1538865109.jpg',
+        height: 100,
+        width: 100,
       ),
-    ),
-  );
+      title: Text(albumTitel, style: TextStyle(color: Colors.white)),
+      subtitle: Text(artist, style: TextStyle(color: Colors.white)),
+      trailing: Text(albumBetyg, style: TextStyle(color: Colors.white)));
 }
 
-Widget inputGenre() {
-  return PopupMenuButton(
-    color: Colors.white,
-    onSelected: null,
-    itemBuilder: (context) => [
-      // ignore: prefer_const_constructors
-      PopupMenuItem(child: Text('HipHop')),
-      PopupMenuItem(child: Text('Jazz')),
-    ],
+Widget review(String reviewText) {
+  return ListTile(
+    title: Text('"$reviewText"', style: TextStyle(color: Colors.white)),
   );
-}
-
-Widget sokKnapp(context) {
-  return ElevatedButton(
-      child: Text('SÖK'),
-      onPressed: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => SokResultatView()),
-        );
-      });
 }

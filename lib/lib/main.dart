@@ -1,14 +1,21 @@
 import 'package:flutter/material.dart';
-import 'Stateful/my_state.dart';
+import './States/my_state.dart';
 import 'package:provider/provider.dart';
-import 'Screens/start_sida.dart';
+import './Screens/start_homepage.dart';
 
 void main() {
   var state = MyState();
-  state.hamtaArtist();
   state.hamtaLista();
+  state.hamtaAlbum();
+  state.hamtaArtist();
 
-  runApp(ChangeNotifierProvider(create: (context) => state, child: MyApp()));
+  runApp(MultiProvider(
+    providers: [
+      ChangeNotifierProvider(create: (context) => state, child: MyApp()),
+      ChangeNotifierProvider(create: (_) => Sokord()),
+    ],
+    child: MyApp(),
+  ));
 }
 
 class MyApp extends StatelessWidget {

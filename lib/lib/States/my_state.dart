@@ -7,23 +7,45 @@ import '../Api/api_artist.dart';
 import '../Items/artist_item.dart';
 
 class MyState extends ChangeNotifier {
+  AlbumItem? _album = null;
+
+  AlbumItem? get album => _album;
+
   List<SokItem> _sokList = [];
 
   List<SokItem> get soklist => _sokList;
 
-  ArtistItem? _artist = null;
+  ArtistItem? _artist;
 
   ArtistItem? get artist => _artist;
 
   Future hamtaLista() async {
-    List<SokItem> lista = await SokLista.fetchAlbumList();
-    _sokList = lista;
+    List<SokItem> sokList = await SokLista.fetchAlbumList();
+    _sokList = sokList;
+    notifyListeners();
+  }
+
+  Future hamtaAlbum() async {
+    AlbumItem album = await AlbumFetcher.fetchAlbum();
+    _album = album;
     notifyListeners();
   }
 
   Future hamtaArtist() async {
     ArtistItem artist = await ArtistFetcher.fetchArtist();
     _artist = artist;
+    notifyListeners();
+  }
+}
+
+class Sokord with ChangeNotifier {
+  String _sokord = '';
+
+  String get sokord => _sokord;
+
+  void setWord(dynamic, String ord) {
+    _sokord = ord;
+    print(sokord);
     notifyListeners();
   }
 }

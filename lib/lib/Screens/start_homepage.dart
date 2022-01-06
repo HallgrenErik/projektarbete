@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'mina_reviews_view.dart';
 import 'sokning_view.dart';
-import 'start_sida2.dart';
+import 'start_review.dart';
 
 class Startsida extends StatefulWidget {
   const Startsida({Key? key}) : super(key: key);
@@ -45,7 +44,7 @@ class _MyStatefulWidgetState extends State<Startsida>
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const sokningView()),
+                  MaterialPageRoute(builder: (context) => Sokning()),
                 );
               }),
         ],
