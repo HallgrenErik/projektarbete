@@ -39,11 +39,11 @@ class MyState extends ChangeNotifier {
 }
 
 class Sokord with ChangeNotifier {
-  String _sokord = '';
+  String? _sokord;
 
-  String get sokord => _sokord;
+  String? get sokord => _sokord;
 
-  void setWord(dynamic, String ord) {
+  void setWord(String ord) {
     _sokord = ord;
     print(sokord);
     notifyListeners();

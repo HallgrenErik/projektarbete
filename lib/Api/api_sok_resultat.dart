@@ -1,4 +1,5 @@
 import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:my_first_app/Items/sok_item.dart';
@@ -9,9 +10,13 @@ import 'package:provider/provider.dart';
 const API_KEY = 'c995db7b4ae865f6a4243e90eddc9593';
 
 class SokLista {
-  //String sokord = Provider.of<Sokord>(_).sokord;
+  //final String? sokord = Provider.of<Sokord>().sokord;
+  // print(sokord);
 
   static Future<List<SokItem>> fetchAlbumList() async {
+    //final String? sokord = Provider.of<Sokord>().sokord;
+    // print(sokord);
+    Consumer<Sokord>(builder: (context, sokord, child) => Sokning());
     http.Response response = await http.get(Uri.parse(
         'http://ws.audioscrobbler.com/2.0/?method=album.search&album=ord&api_key=c995db7b4ae865f6a4243e90eddc9593&format=json'));
     //print(response.body);

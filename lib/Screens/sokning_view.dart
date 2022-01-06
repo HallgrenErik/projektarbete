@@ -38,7 +38,7 @@ class _AvanceradSokningState extends State<Sokning> {
               child: Text('SÖK'),
               onPressed: () {
                 Provider.of<Sokord>(context, listen: false)
-                    .setWord('', myController.text);
+                    .setWord(myController.text);
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => SokResultatView()),
