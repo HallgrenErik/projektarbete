@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_first_app/Items/sok_item.dart';
+import 'package:my_first_app/States/my_state.dart';
+import 'package:provider/src/provider.dart';
 import '../Screens/album_info_view.dart';
 
 class AlbumSok extends StatefulWidget {

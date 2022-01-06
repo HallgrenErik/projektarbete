@@ -12,7 +12,7 @@ void main() {
   runApp(MultiProvider(
     providers: [
       ChangeNotifierProvider(create: (context) => state, child: MyApp()),
-      ChangeNotifierProvider(create: (_) => Sokord()),
+      ChangeNotifierProvider(create: (context) => Sokord()),
     ],
     child: MyApp(),
   ));

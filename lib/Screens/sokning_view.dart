@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-
+import 'package:my_first_app/States/my_state.dart';
+import 'package:provider/provider.dart';
 import 'sok_resultat_view.dart';
 
 class Sokning extends StatefulWidget {
@@ -35,9 +36,10 @@ class _AvanceradSokningState extends State<Sokning> {
           ElevatedButton(
               child: Text('SÖK'),
               onPressed: () {
-                setState(() {
-                  sokord = myController.text;
-                });
+
+                Provider.of<Sokord>(context, listen: false)
+                    .setWord(myController.text);
+
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => SokResultatView()),
