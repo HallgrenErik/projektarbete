@@ -22,6 +22,16 @@ class ReviewAPI {
       return Review.fromJson(data);
     }).toList();
   }
+
+  static Future<List<Review>> itemList() async {
+    http.Response response =
+        await http.get(Uri.parse('$apiURL/todos?key=$apiKey'));
+    var jSonResp = response.body;
+    var json = jsonDecode(jSonResp);
+    return json.map<Review>((data) {
+      return Review.fromJson(data);
+    }).toList();
+  }
 }
 
 class MyState extends ChangeNotifier {
@@ -32,11 +42,11 @@ class MyState extends ChangeNotifier {
 
   List<Review> get list => _list;
 
-  /*Future getList() async {
+  Future getList() async {
     List<Review> list = await ReviewAPI.itemList();
     _list = list;
     notifyListeners();
-  }*/
+  }
 
   void addTask(Review review) async {
     _list = await ReviewAPI.addItem(review);
