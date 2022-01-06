@@ -12,7 +12,7 @@ class _AvanceradSokningState extends State<Sokning> {
   String sokord = '';
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+   return Scaffold(
       appBar: AppBar(
         title: Text('Sökning'),
       ),
