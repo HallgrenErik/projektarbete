@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class SokItem {
   String albumTitel;
   String artistName;
-  String? coverUrl = '';
+  String? coverUrl;
 
   SokItem({
     required this.albumTitel,
