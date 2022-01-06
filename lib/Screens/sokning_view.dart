@@ -10,11 +10,10 @@ class Sokning extends StatefulWidget {
 
 class _AvanceradSokningState extends State<Sokning> {
   final myController = TextEditingController();
-
+  String sokord = '';
   @override
   Widget build(BuildContext context) {
-    String sokord;
-    return Scaffold(
+   return Scaffold(
       appBar: AppBar(
         title: Text('Sökning'),
       ),
@@ -37,8 +36,10 @@ class _AvanceradSokningState extends State<Sokning> {
           ElevatedButton(
               child: Text('SÖK'),
               onPressed: () {
+
                 Provider.of<Sokord>(context, listen: false)
                     .setWord(myController.text);
+
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => SokResultatView()),
