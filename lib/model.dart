@@ -1,74 +1,63 @@
-// ignore_for_file: import_of_legacy_library_into_null_safe
-
 import 'package:flutter/material.dart';
-import 'Screens/sok_resultat_view.dart';
 
-Widget skrivRad() {
-  return Column(children: [
-    Container(height: 10),
-    Image.network(
-      'https://www.theaudiodb.com/images/media/album/thumb/rpvuyt1538865109.jpg',
-      height: 200,
-      width: 200,
-    ),
-    Container(height: 10),
-    const Text("Back in Black",
-        style: TextStyle(
-          fontSize: 20,
-          color: Colors.white,
-        )),
-    const Text("AC/DC", style: TextStyle(color: Colors.white)),
-    Container(
-      margin: const EdgeInsets.all(30),
-      decoration: BoxDecoration(
-          color: Colors.white,
-          border: Border.all(color: Colors.black, width: 3),
-          borderRadius: BorderRadius.circular(10)),
-      child: const Padding(
-        padding: EdgeInsets.only(left: 20),
-        child: TextField(
-          decoration: InputDecoration(hintText: "Optional: Write Username"),
-        ),
-      ),
-    ),
-    Container(
-      height: 100,
-      margin: const EdgeInsets.all(5),
-      decoration: BoxDecoration(
-          color: Colors.white,
-          border: Border.all(color: Colors.black, width: 3),
-          borderRadius: BorderRadius.circular(10)),
-      child: const Padding(
-        padding: EdgeInsets.only(left: 20),
-        child: TextField(
-          decoration: InputDecoration(hintText: "Write a Review"),
-        ),
-      ),
-    ),
-    Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        iconKnapp(),
-        iconKnapp(),
-        iconKnapp(),
-        iconKnapp(),
-        iconKnapp(),
-      ],
-    ),
-    ElevatedButton(
-        onPressed: () {},
-        style: ElevatedButton.styleFrom(primary: Colors.purple),
-        child: Text('ADD')),
-  ]);
+Widget songRow({required String songTitel}) {
+  return ListTile(
+    title: Text(songTitel),
+  );
 }
 
-Widget iconKnapp() {
-  return IconButton(
-    icon: const Icon(
-      Icons.star,
-      color: Colors.yellow,
-      size: 40,
+Widget filterbar() {
+  return Container(
+    child: Text(
+      'Top Results',
+      style: TextStyle(fontSize: 14),
     ),
-    onPressed: () {},
+    alignment: Alignment.center,
+    height: 30,
+    width: 400,
+    decoration: BoxDecoration(color: Colors.white70),
+  );
+}
+
+Widget filter() {
+  var aa;
+  return DropdownButton(
+      hint: Text("Filter by"),
+      //På något sätt skapa en hintext om att filter finns här + ta bort den lilla gråa triangeln om möjligt
+      value: aa,
+      style: const TextStyle(color: Colors.black),
+      alignment: Alignment.centerRight,
+      underline: Container(
+        height: 2,
+        color: Colors.white70,
+      ),
+      items: const [
+        DropdownMenuItem(
+            value: Alignment.topCenter, child: Text('Best Rating')),
+        DropdownMenuItem(
+            value: Alignment.topCenter, child: Text('Worst Rating')),
+        DropdownMenuItem(
+            value: Alignment.topLeft, child: Text('Number of Reviews')),
+      ],
+      onChanged: (value) {});
+}
+
+Widget reviewItem(
+    {required String albumTitel, required String artist, var albumBetyg}) {
+  //lägga till användarnamn /melwin
+  return ListTile(
+      leading: Image.network(
+        'https://www.theaudiodb.com/images/media/album/thumb/rpvuyt1538865109.jpg',
+        height: 100,
+        width: 100,
+      ),
+      title: Text(albumTitel, style: TextStyle(color: Colors.white)),
+      subtitle: Text(artist, style: TextStyle(color: Colors.white)),
+      trailing: Text(albumBetyg, style: TextStyle(color: Colors.white)));
+}
+
+Widget review(String reviewText) {
+  return ListTile(
+    title: Text('"$reviewText"', style: TextStyle(color: Colors.white)),
   );
 }

@@ -6,14 +6,13 @@ import 'album_lista.dart';
 import 'artist_view.dart';
 import './skriv_review.dart';
 import 'filter_mm.dart';
-import '../skriv_review.dart';
-import '../filter_mm.dart';
+
 import 'artist_info_view.dart';
-import 'package:my_first_app/my_state.dart';
+import 'package:my_first_app/States/my_state.dart';
 
 import 'package:provider/provider.dart';
-import '../album_list.dart';
-import '../album_list.dart';
+import '../States/album_state.dart';
+import '../States/album_state.dart';
 
 class AlbumInfoView extends StatelessWidget {
   @override
@@ -26,7 +25,7 @@ class AlbumInfoView extends StatelessWidget {
         centerTitle: true,
       ),
       body: Consumer<MyState>(
-          builder: (context, state, child) => AlbumList(state.albumLista)),
+          builder: (context, state, child) => AlbumState(state.album)),
     );
   }
 }

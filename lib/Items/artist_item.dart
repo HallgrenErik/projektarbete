@@ -6,10 +6,10 @@ class ArtistItem {
     required this.artistName,
     required this.artistDescription,
   });
-  static ArtistItem artistFromJson(Map<String, dynamic> json) {
+  static ArtistItem artistItemFromJson(Map<String, dynamic> json) {
     return ArtistItem(
       artistName: json['name'],
-      artistDescription: json['bio']['summary'],
+      artistDescription: json['bio']['content'],
     );
   }
 }

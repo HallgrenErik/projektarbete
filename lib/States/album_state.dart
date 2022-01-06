@@ -1,27 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:my_first_app/Items/album_item.dart';
-import './Items/artist_item.dart';
-import 'Screens/artist_info_view.dart';
-import 'filter_mm.dart';
+import '../Items/artist_item.dart';
+import '../Screens/artist_info_view.dart';
+import '../model.dart';
 
-class AlbumList extends StatefulWidget {
-  final List<AlbumItem> list;
+class AlbumState extends StatefulWidget {
+  final AlbumItem? album;
 
-  AlbumList(this.list);
+  AlbumState(this.album);
 
   @override
-  State<AlbumList> createState() => _AlbumListState();
+  State<AlbumState> createState() => _AlbumState();
 }
 
-class _AlbumListState extends State<AlbumList> {
+class _AlbumState extends State<AlbumState> {
   Widget build(BuildContext context) {
-    return ListView.builder(
-      itemBuilder: (context, index) => artistrad(context, widget.list[index]),
-      itemCount: widget.list.length,
-    );
+    return _albumrad(context, widget.album);
   }
 
-  Widget artistrad(context, rad) {
+  Widget _albumrad(context, rad) {
+    if (rad == null) return Container();
     return SingleChildScrollView(
       child: Column(
         children: [
@@ -33,7 +31,7 @@ class _AlbumListState extends State<AlbumList> {
             height: 300,
           ),
           Container(height: 10),
-          const Text("Back in Black",
+          Text(rad.albumTitel,
               style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 25,
@@ -43,7 +41,7 @@ class _AlbumListState extends State<AlbumList> {
               Navigator.push(context,
                   MaterialPageRoute(builder: (context) => ArtistView()));
             },
-            child: Text("AC/DC"),
+            child: Text(rad.artistName),
             style: TextButton.styleFrom(
                 textStyle: const TextStyle(
                     fontSize: 25,
@@ -55,9 +53,8 @@ class _AlbumListState extends State<AlbumList> {
             style: TextStyle(
                 fontSize: 20, color: Colors.white, fontWeight: FontWeight.bold),
           ),
-          const ListTile(
-              title: Text(
-                  "Track List: \n1 - Hells Bells \n2 - Shoot to Thrill \n3 - What Do You Do With The Money \n4 - Givin the Dog a Bone\n5 - Let Me Put My Love Into You\n6 - Back In Black \n7 - You Shook Me All Night Long \n8 - Have a Drink on Me \n9 - Shake a Leg \n10 - Rock and Roll Ain't Noise Pollution",
+          ListTile(
+              title: Text(rad.description,
                   style: TextStyle(
                       fontWeight: FontWeight.bold, color: Colors.white))),
           Container(height: 10),

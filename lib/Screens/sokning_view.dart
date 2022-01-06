@@ -1,21 +1,23 @@
 import 'package:flutter/material.dart';
-import '../model.dart';
-import '../model.dart';
+import 'package:my_first_app/States/my_state.dart';
+import 'package:provider/provider.dart';
+
 import 'sok_resultat_view.dart';
 
-class AvanceradSokning extends StatefulWidget {
+class Sokning extends StatefulWidget {
   @override
-  State<AvanceradSokning> createState() => _AvanceradSokningState();
+  State<Sokning> createState() => _AvanceradSokningState();
 }
 
-class _AvanceradSokningState extends State<AvanceradSokning> {
+class _AvanceradSokningState extends State<Sokning> {
   final myController = TextEditingController();
-  String sokord = '';
+
   @override
   Widget build(BuildContext context) {
+    String sokord;
     return Scaffold(
       appBar: AppBar(
-        title: Text('Avancerad sökning'),
+        title: Text('Sökning'),
       ),
       body: SingleChildScrollView(
         child: Column(children: [
@@ -36,9 +38,8 @@ class _AvanceradSokningState extends State<AvanceradSokning> {
           ElevatedButton(
               child: Text('SÖK'),
               onPressed: () {
-                setState(() {
-                  sokord = myController.text;
-                });
+                Provider.of<Sokord>(context, listen: false)
+                    .setWord('', myController.text);
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => SokResultatView()),
