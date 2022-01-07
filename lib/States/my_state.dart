@@ -3,6 +3,7 @@ import 'package:my_first_app/Api/api_album.dart';
 import 'package:my_first_app/Api/api_sok_resultat.dart';
 import 'package:my_first_app/Items/album_item.dart';
 import 'package:my_first_app/Items/sok_item.dart';
+import 'package:provider/provider.dart';
 import '../Api/api_artist.dart';
 import '../Items/artist_item.dart';
 
@@ -20,32 +21,50 @@ class MyState extends ChangeNotifier {
   ArtistItem? get artist => _artist;
 
   Future hamtaLista() async {
-    List<SokItem> sokList = await SokLista.fetchAlbumList();
+    List<SokItem> sokList = await SokLista.doAlbumSearch(sokord);
     _sokList = sokList;
     notifyListeners();
   }
 
   Future hamtaAlbum() async {
-    AlbumItem album = await AlbumFetcher.fetchAlbum();
+    AlbumItem album = await AlbumFetcher.fetchAlbum(newAlbum, newArtist);
     _album = album;
     notifyListeners();
   }
 
   Future hamtaArtist() async {
-    ArtistItem artist = await ArtistFetcher.fetchArtist();
+    ArtistItem artist = await ArtistFetcher.fetchArtist(artistInfo);
     _artist = artist;
     notifyListeners();
   }
-}
 
-class Sokord with ChangeNotifier {
-  String? _sokord;
+  String _sokord = '';
 
-  String? get sokord => _sokord;
+  String get sokord => _sokord;
 
   void setWord(String ord) {
     _sokord = ord;
-    print(sokord);
+    print(_sokord);
+    notifyListeners();
+  }
+
+  String _newAlbum = '';
+  String _newArtist = '';
+
+  String get newAlbum => _newAlbum;
+  String get newArtist => _newArtist;
+
+  void setAA(String newArtist, String newAlbum) {
+    _newAlbum = newAlbum;
+    _newArtist = newArtist;
+    notifyListeners();
+  }
+
+  String _artistInfo = '';
+  String get artistInfo => _artistInfo;
+
+  void setArtist(String artistInfo) {
+    _artistInfo = artistInfo;
     notifyListeners();
   }
 }

@@ -1,12 +1,12 @@
 class SokItem {
   String albumTitel;
   String artistName;
-  String? coverUrl;
+  String coverUrl;
 
   SokItem({
     required this.albumTitel,
     required this.artistName,
-    this.coverUrl,
+    required this.coverUrl,
   });
   static SokItem sokItemFromJson(Map<String, dynamic> json) {
     return SokItem(

@@ -38,6 +38,8 @@ class _AlbumSokListState extends State<AlbumSok> {
         style: textStyle(),
       ),
       onTap: () {
+        Provider.of<MyState>(context, listen: false)
+            .setAA(rad.artistName, rad.albumTitel);
         Navigator.push(
             context, MaterialPageRoute(builder: (context) => AlbumInfoView()));
       },

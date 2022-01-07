@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_first_app/Items/album_item.dart';
+import 'package:my_first_app/States/my_state.dart';
+import 'package:provider/provider.dart';
 import '../Screens/artist_info_view.dart';
 import '../model.dart';
 
@@ -37,6 +39,8 @@ class _AlbumState extends State<AlbumState> {
                   color: Colors.white)),
           TextButton(
             onPressed: () {
+              Provider.of<MyState>(context, listen: false)
+                  .setArtist(rad.artistName);
               Navigator.push(context,
                   MaterialPageRoute(builder: (context) => ArtistView()));
             },
