@@ -5,6 +5,7 @@ import '../States/my_state.dart';
 
 class ArtistView extends StatelessWidget {
   Widget build(BuildContext context) {
+    Provider.of<MyState>(context, listen: false).hamtaArtist();
     return Scaffold(
       appBar: AppBar(
         title: const Text("ARTIST"),

@@ -5,14 +5,11 @@ import 'Screens/start_homepage.dart';
 
 void main() {
   var state = MyState();
-  state.hamtaLista();
-  state.hamtaAlbum();
-  state.hamtaArtist();
 
   runApp(MultiProvider(
     providers: [
       ChangeNotifierProvider(create: (context) => state, child: MyApp()),
-      ChangeNotifierProvider(create: (context) => Sokord()),
+      //ChangeNotifierProvider(create: (context) => Sokord()),
     ],
     child: MyApp(),
   ));
