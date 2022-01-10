@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:my_first_app/Api/api_album.dart';
 import 'package:my_first_app/Api/api_review.dart';
 import 'package:my_first_app/Api/api_sok_resultat.dart';
+import 'package:my_first_app/Api/api_start.dart';
 import 'package:my_first_app/Items/album_item.dart';
 import 'package:my_first_app/Items/compiled_data_item.dart';
 import 'package:my_first_app/Items/review_item.dart';
 import 'package:my_first_app/Items/sok_item.dart';
+import 'package:my_first_app/Items/start_item.dart';
 import 'package:provider/provider.dart';
 import '../Api/api_artist.dart';
 import '../Items/artist_item.dart';
@@ -14,6 +16,16 @@ class MyState extends ChangeNotifier {
   AlbumItem? _album = null;
 
   AlbumItem? get album => _album;
+
+  List<StartItem> _startList = [];
+
+  List<StartItem> get startList => _startList;
+
+  Future hamtaStartLista() async {
+    List<StartItem> startList = await StartLista.getStartList();
+    _startList = startList;
+    notifyListeners();
+  }
 
   List<SokItem> _sokList = [];
 

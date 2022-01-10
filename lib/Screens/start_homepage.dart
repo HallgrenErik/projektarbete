@@ -1,43 +1,17 @@
 import 'package:flutter/material.dart';
-import 'sokning_view.dart';
-import 'start_review.dart';
+import 'package:my_first_app/Items/start_item.dart';
+import 'package:my_first_app/Screens/sokning_view.dart';
+import 'package:my_first_app/States/my_state.dart';
+import 'package:my_first_app/States/start_state.dart';
+import 'package:provider/provider.dart';
 
-class Startsida extends StatefulWidget {
-  const Startsida({Key? key}) : super(key: key);
-
-  @override
-  State<Startsida> createState() => _MyStatefulWidgetState();
-}
-
-/// AnimationControllers can be created with `vsync: this` because of TickerProviderStateMixin.
-class _MyStatefulWidgetState extends State<Startsida>
-    with TickerProviderStateMixin {
-  late TabController _tabController;
-
-  @override
-  void initState() {
-    super.initState();
-    _tabController = TabController(length: 2, vsync: this);
-  }
-
-  @override
+class Startsida extends StatelessWidget {
   Widget build(BuildContext context) {
+    Provider.of<MyState>(context, listen: false).hamtaStartLista();
     return Scaffold(
       appBar: AppBar(
+        title: Text('Startsida'),
         centerTitle: true,
-        title: const Text("GLITTER",
-            style: TextStyle(fontWeight: FontWeight.bold)),
-        bottom: TabBar(
-          controller: _tabController,
-          tabs: const <Widget>[
-            Tab(
-              text: "HOME PAGE",
-            ),
-            Tab(
-              text: "MY REVIEWS",
-            ),
-          ],
-        ),
         actions: [
           IconButton(
               icon: Icon(Icons.search),
@@ -49,17 +23,8 @@ class _MyStatefulWidgetState extends State<Startsida>
               }),
         ],
       ),
-      body: TabBarView(
-        controller: _tabController,
-        children: const <Widget>[
-          Center(
-            child: Mainpage(),
-          ),
-          Center(
-            child: MinaReviews(),
-          ),
-        ],
-      ),
+      body: Consumer<MyState>(
+          builder: (context, state, child) => StartSida(state.startList)),
     );
   }
 }
