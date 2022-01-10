@@ -68,12 +68,18 @@ class _ReviewState extends State<ReviewState> {
         Text('Lägg gärna till ett beyg',
             style: const TextStyle(fontSize: 20, color: Colors.white)),
         DropdownButton<int>(
+            dropdownColor: Colors.black,
             hint: const Text("Pick"),
             value: ratingValue,
             items: <int>[1, 2, 3, 4, 5].map((int value) {
               return DropdownMenuItem<int>(
                 value: value,
-                child: Text(value.toString()),
+                child: Text(
+                  value.toString(),
+                  style: TextStyle(
+                    color: Colors.white,
+                  ),
+                ),
               );
             }).toList(),
             onChanged: (newVal) {
