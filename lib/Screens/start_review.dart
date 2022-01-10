@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_first_app/States/start_state.dart';
 import '../States/my_state.dart';
 import '../Lists/review_list.dart';
 import 'package:provider/provider.dart';
@@ -10,12 +11,11 @@ class Mainpage extends StatelessWidget {
   const Mainpage({Key? key}) : super(key: key);
 
   Widget build(BuildContext context) {
+    Provider.of<MyState>(context, listen: false).hamtaStartLista();
     return Scaffold(
-        body: ListView(children: [
-      filterbar(),
-      filter(),
-      const Divider(color: Colors.white),
-    ]));
+      body: Consumer<MyState>(
+          builder: (context, state, child) => StartSida(state.startList)),
+    );
   }
 }
 
