@@ -1,23 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:my_first_app/Lists/review_list.dart';
 import 'package:my_first_app/States/my_state.dart';
 import 'package:provider/provider.dart';
-import '../States/album_state.dart';
 
-class AlbumInfoView extends StatelessWidget {
+import '../States/review_state.dart';
+
+class SkrivReview extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Provider.of<MyState>(context, listen: false).hamtaAlbum();
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          "ALBUM",
-        ),
+        title: const Text('Write Review'),
         centerTitle: true,
       ),
       body: Consumer<MyState>(
-        builder: (context, state, child) => AlbumState(state.album),
-      ),
+          builder: (context, state, child) => ReviewState(state.album)),
     );
   }
 }
