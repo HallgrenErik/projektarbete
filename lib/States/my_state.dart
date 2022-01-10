@@ -2,30 +2,45 @@ import 'package:flutter/material.dart';
 import 'package:my_first_app/Api/api_album.dart';
 import 'package:my_first_app/Api/api_review.dart';
 import 'package:my_first_app/Api/api_sok_resultat.dart';
-import 'package:my_first_app/Api/api_start.dart';
 import 'package:my_first_app/Items/album_item.dart';
 import 'package:my_first_app/Items/compiled_data_item.dart';
-import 'package:my_first_app/Items/review_item.dart';
 import 'package:my_first_app/Items/sok_item.dart';
-import 'package:my_first_app/Items/start_item.dart';
 import 'package:provider/provider.dart';
 import '../Api/api_artist.dart';
 import '../Items/artist_item.dart';
+import '../Items/review_item.dart';
 
 class MyState extends ChangeNotifier {
+  List<Review> _list = [];
+  Review? _review;
+
+  Review? get review => _review;
+
+  List<Review> get list => _list;
+
+  Future getList() async {
+    List<Review> list = await ReviewAPI.reviewList();
+    _list = list;
+    notifyListeners();
+  }
+
+  void addReview(String albumCoverX, albumX, artistX, authorX, reviewTextX,
+      int ratingX) async {
+    final compile = CompiledData(
+        albumCover: albumCoverX,
+        album: albumX,
+        artist: artistX,
+        author: authorX,
+        rating: ratingX,
+        reviewText: reviewTextX);
+    final review = Review(id: '', compiledData: compile, redundant: false);
+    _list = await ReviewAPI.addReview(review);
+    notifyListeners();
+  }
+
   AlbumItem? _album = null;
 
   AlbumItem? get album => _album;
-
-  List<StartItem> _startList = [];
-
-  List<StartItem> get startList => _startList;
-
-  Future hamtaStartLista() async {
-    List<StartItem> startList = await StartLista.getStartList();
-    _startList = startList;
-    notifyListeners();
-  }
 
   List<SokItem> _sokList = [];
 
@@ -80,30 +95,6 @@ class MyState extends ChangeNotifier {
 
   void setArtist(String artistInfo) {
     _artistInfo = artistInfo;
-    notifyListeners();
-  }
-
-  List<Review> _list = [];
-  Review? _review;
-
-  Review? get review => _review;
-
-  List<Review> get list => _list;
-
-  Future getList() async {
-    List<Review> list = await ReviewAPI.reviewList();
-    _list = list;
-    notifyListeners();
-  }
-
-  void addReview(String albumX, authorX, reviewTextX, int ratingX) async {
-    final compile = CompiledData(
-        album: albumX,
-        author: authorX,
-        rating: ratingX,
-        reviewText: reviewTextX);
-    final review = Review(id: '', compiledData: compile, redundant: false);
-    _list = await ReviewAPI.addReview(review);
     notifyListeners();
   }
 }

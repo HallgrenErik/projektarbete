@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_first_app/Items/album_item.dart';
+import 'package:my_first_app/Lists/review_list.dart';
 import 'package:my_first_app/States/my_state.dart';
 import 'package:provider/provider.dart';
 import '../Screens/artist_info_view.dart';
@@ -53,13 +54,10 @@ class _AlbumState extends State<AlbumState> {
                     fontWeight: FontWeight.bold,
                     decoration: TextDecoration.underline)),
           ),
-          const Text(
-            "Rating - 3/5",
-            style: TextStyle(
-                fontSize: 20, color: Colors.white, fontWeight: FontWeight.bold),
-          ),
           ElevatedButton(
               onPressed: () {
+                Provider.of<MyState>(context, listen: false)
+                    .setAA(rad.artistName, rad.albumTitel);
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => SkrivReview()));
               },
@@ -69,23 +67,6 @@ class _AlbumState extends State<AlbumState> {
                   style: const TextStyle(
                       fontWeight: FontWeight.bold, color: Colors.white))),
           Container(height: 10),
-          Container(
-            height: 100,
-            width: 300,
-            decoration: BoxDecoration(
-                border: Border.all(color: Colors.black, width: 3),
-                borderRadius: BorderRadius.circular(20)),
-            child: review('Älskar AC/DC!! Shoot to Thrill är min favorit'),
-          ),
-          Container(height: 10),
-          Container(
-              height: 100,
-              width: 300,
-              decoration: BoxDecoration(
-                  border: Border.all(color: Colors.black, width: 3),
-                  borderRadius: BorderRadius.circular(20)),
-              child: review(' Föredrar pop, men ändå ok album- 3/5'),
-              margin: EdgeInsets.only(bottom: 10))
         ],
       ),
     );
