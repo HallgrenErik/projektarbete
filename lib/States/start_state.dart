@@ -23,30 +23,32 @@ class _StartSidaState extends State<StartSida> {
   }
 
   Widget startrad(context, sak) {
-    return ListTile(
-      leading: Image.network(
-        sak.startCoverUrl,
-        height: 100,
-        width: 100,
-      ),
-      title: Text(
-        sak.startAlbumTitle,
-        style: textStyle(),
-      ),
-      subtitle: Text(sak.startArtistName, style: textStyle()),
-      trailing: Text(
-        'Playcount:\n' + sak.startPlayCount.toString(),
-        style: textStyle(),
-      ),
-      // Text('playCount ' + sak.startPlayCount)
+    return Card(
+        color: const Color(0xFF66579C),
+        child: ListTile(
+          leading: Image.network(
+            sak.startCoverUrl,
+            height: 100,
+            width: 100,
+          ),
+          title: Text(
+            sak.startAlbumTitle,
+            style: textStyle(),
+          ),
+          subtitle: Text(sak.startArtistName, style: textStyle()),
+          trailing: Text(
+            'Playcount:\n' + sak.startPlayCount.toString(),
+            style: textStyle(),
+          ),
+          // Text('playCount ' + sak.startPlayCount)
 
-      onTap: () {
-        Provider.of<MyState>(context, listen: false)
-            .setAA(sak.startArtistName, sak.startAlbumTitle);
-        Navigator.push(
-            context, MaterialPageRoute(builder: (context) => AlbumInfoView()));
-      },
-    );
+          onTap: () {
+            Provider.of<MyState>(context, listen: false)
+                .setAA(sak.startArtistName, sak.startAlbumTitle);
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => AlbumInfoView()));
+          },
+        ));
   }
 }
 
