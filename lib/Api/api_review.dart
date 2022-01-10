@@ -34,29 +34,3 @@ class ReviewAPI {
     }).toList();
   }
 }
-
-class MyState extends ChangeNotifier {
-  List<Review> _list = [];
-  Review? _review;
-
-  Review? get review => _review;
-
-  List<Review> get list => _list;
-
-  Future getList() async {
-    List<Review> list = await ReviewAPI.reviewList();
-    _list = list;
-    notifyListeners();
-  }
-
-  void addReview(String albumX, authorX, reviewTextX, int ratingX) async {
-    final compile = CompiledData(
-        album: albumX,
-        author: authorX,
-        rating: ratingX,
-        reviewText: reviewTextX);
-    final review = Review(id: '', compiledData: compile, redundant: false);
-    _list = await ReviewAPI.addReview(review);
-    notifyListeners();
-  }
-}
