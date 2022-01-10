@@ -32,8 +32,9 @@ class _ReviewState extends State<ReviewState> {
         child: Column(
       children: [
         Text(rad.albumTitel,
-            style: const TextStyle(fontSize: 20, color: Colors.black)),
-        Text(rad.artistName, style: const TextStyle(color: Colors.black)),
+            style: const TextStyle(fontSize: 30, color: Colors.white)),
+        Text(rad.artistName,
+            style: const TextStyle(fontSize: 20, color: Colors.white)),
         Container(
           margin: const EdgeInsets.all(30),
           decoration: BoxDecoration(
@@ -64,6 +65,8 @@ class _ReviewState extends State<ReviewState> {
             ),
           ),
         ),
+        Text('Lägg gärna till ett beyg',
+            style: const TextStyle(fontSize: 20, color: Colors.white)),
         DropdownButton<int>(
             hint: const Text("Pick"),
             value: ratingValue,
