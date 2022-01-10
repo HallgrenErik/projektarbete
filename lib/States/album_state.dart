@@ -60,6 +60,8 @@ class _AlbumState extends State<AlbumState> {
           ),
           ElevatedButton(
               onPressed: () {
+                Provider.of<MyState>(context, listen: false)
+                    .setAA(rad.artistName, rad.albumTitel);
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => SkrivReview()));
               },

@@ -1,20 +1,21 @@
 import 'package:flutter/material.dart';
+import '../Items/album_item.dart';
 import 'package:provider/provider.dart';
 
 import '../Items/review_item.dart';
 import '../Api/api_review.dart';
+import 'my_state.dart';
 
 class ReviewState extends StatefulWidget {
-  final Review? review;
+  final AlbumItem? album;
 
-  ReviewState(this.review);
+  ReviewState(this.album);
+
   @override
   State<ReviewState> createState() => _ReviewState();
 }
 
 class _ReviewState extends State<ReviewState> {
-  String albumText = 'Passas från när man går in för att skriva review.';
-  String artistText = 'Samma som albumText.';
   String authorText = 'Anonymous';
   final TextEditingController authorReader = TextEditingController();
   int ratingValue = 0;
@@ -23,16 +24,16 @@ class _ReviewState extends State<ReviewState> {
 
   @override
   Widget build(BuildContext context) {
-    return _review(context, widget.review);
+    return _review(context, widget.album);
   }
 
   Widget _review(context, rad) {
     return SingleChildScrollView(
         child: Column(
       children: [
-        Text(albumText,
+        Text(rad.albumTitel,
             style: const TextStyle(fontSize: 20, color: Colors.black)),
-        Text(artistText, style: const TextStyle(color: Colors.black)),
+        Text(rad.artistName, style: const TextStyle(color: Colors.black)),
         Container(
           margin: const EdgeInsets.all(30),
           decoration: BoxDecoration(
@@ -72,7 +73,7 @@ class _ReviewState extends State<ReviewState> {
               authorText = authorReader.text;
               reviewResponse = reviewReader.text;
               Provider.of<MyState>(context, listen: false).addReview(
-                  albumText, authorText, reviewResponse, ratingValue);
+                  rad.albumTitel, authorText, reviewResponse, ratingValue);
               authorReader.clear();
               reviewReader.clear();
             },

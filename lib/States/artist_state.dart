@@ -24,7 +24,7 @@ class _ArtistState extends State<ArtistState> {
         children: [
           Container(height: 10),
           Text(rad.artistName,
-              style: TextStyle(
+              style: const TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 75.5,
                 color: Colors.white,
@@ -32,7 +32,7 @@ class _ArtistState extends State<ArtistState> {
           Container(
             child: Text(
               rad.artistDescription,
-              style: TextStyle(
+              style: const TextStyle(
                   fontSize: 15,
                   color: Colors.white,
                   fontWeight: FontWeight.bold),
