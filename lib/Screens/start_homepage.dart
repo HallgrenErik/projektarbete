@@ -31,7 +31,7 @@ class _MyStatefulWidgetState extends State<Startsida>
           controller: _tabController,
           tabs: const <Widget>[
             Tab(
-              text: "HOME PAGE",
+              text: "DEVELOPERS RECOMEND",
             ),
             Tab(
               text: "RECENT REVIEWS",
