@@ -54,11 +54,6 @@ class _AlbumState extends State<AlbumState> {
                     fontWeight: FontWeight.bold,
                     decoration: TextDecoration.underline)),
           ),
-          const Text(
-            "Rating - 3/5",
-            style: TextStyle(
-                fontSize: 20, color: Colors.white, fontWeight: FontWeight.bold),
-          ),
           ElevatedButton(
               onPressed: () {
                 Provider.of<MyState>(context, listen: false)
