@@ -7,10 +7,10 @@ import '../States/review_state.dart';
 class SkrivReview extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    Provider.of<MyState>(context, listen: false).hamtaAlbum();
+    Provider.of<MyState>(context, listen: false).getAlbum();
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Write Review'),
+        title: const Text('WRITE REVIEW'),
         centerTitle: true,
       ),
       body: Consumer<MyState>(

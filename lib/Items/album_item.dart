@@ -1,24 +1,22 @@
 class AlbumItem {
-  String albumTitel;
+  String albumTitle;
   String artistName;
   String cover;
-  String description;
-  String published;
+  String albumDescription;
 
-  AlbumItem(
-      {required this.albumTitel,
-      required this.artistName,
-      required this.cover,
-      required this.description,
-      required this.published});
+  AlbumItem({
+    required this.albumTitle,
+    required this.artistName,
+    required this.cover,
+    required this.albumDescription,
+  });
 
   static AlbumItem albumFromJson(Map<String, dynamic> json) {
     return AlbumItem(
-      albumTitel: json["name"],
+      albumTitle: json["name"],
       artistName: json["artist"],
       cover: json['image'][4]['#text'],
-      description: json['wiki']['summary'],
-      published: json['wiki']['published'],
+      albumDescription: json['wiki']['summary'],
     );
   }
 }

@@ -7,7 +7,7 @@ import '../States/album_state.dart';
 class AlbumInfoView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    Provider.of<MyState>(context, listen: false).hamtaAlbum();
+    Provider.of<MyState>(context, listen: false).getAlbum();
     return Scaffold(
       appBar: AppBar(
         title: const Text(

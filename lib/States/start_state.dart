@@ -5,26 +5,26 @@ import 'package:my_first_app/States/my_state.dart';
 import 'package:provider/src/provider.dart';
 import '../Screens/album_info_view.dart';
 
-class StartSida extends StatefulWidget {
+class DevPage extends StatefulWidget {
   final List<StartItem> list;
 
-  StartSida(this.list);
+  DevPage(this.list);
 
   @override
-  State<StartSida> createState() => _StartSidaState();
+  State<DevPage> createState() => _DevPageState();
 }
 
-class _StartSidaState extends State<StartSida> {
+class _DevPageState extends State<DevPage> {
   Widget build(BuildContext context) {
     return ListView.builder(
-      itemBuilder: (context, index) => startrad(context, widget.list[index]),
+      itemBuilder: (context, index) => startTile(context, widget.list[index]),
       itemCount: widget.list.length,
     );
   }
 
-  Widget startrad(context, sak) {
+  Widget startTile(context, sak) {
     return Card(
-        color: const Color(0xFF66579C),
+        color: const Color(0xC5BCE6),
         child: ListTile(
           leading: Image.network(
             sak.startCoverUrl,
@@ -40,11 +40,9 @@ class _StartSidaState extends State<StartSida> {
             'Playcount:\n' + sak.startPlayCount.toString(),
             style: textStyle(),
           ),
-          // Text('playCount ' + sak.startPlayCount)
-
           onTap: () {
             Provider.of<MyState>(context, listen: false)
-                .setAA(sak.startArtistName, sak.startAlbumTitle);
+                .setAlbumArtist(sak.startArtistName, sak.startAlbumTitle);
             Navigator.push(context,
                 MaterialPageRoute(builder: (context) => AlbumInfoView()));
           },

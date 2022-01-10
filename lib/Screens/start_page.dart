@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'sokning_view.dart';
-import 'start_review.dart';
+import 'start_tabs.dart';
 
-class Startsida extends StatefulWidget {
-  const Startsida({Key? key}) : super(key: key);
+class StartPage extends StatefulWidget {
+  const StartPage({Key? key}) : super(key: key);
 
   @override
-  State<Startsida> createState() => _MyStatefulWidgetState();
+  State<StartPage> createState() => _MyStatefulWidgetState();
 }
 
 /// AnimationControllers can be created with `vsync: this` because of TickerProviderStateMixin.
-class _MyStatefulWidgetState extends State<Startsida>
+class _MyStatefulWidgetState extends State<StartPage>
     with TickerProviderStateMixin {
   late TabController _tabController;
 
@@ -31,7 +31,7 @@ class _MyStatefulWidgetState extends State<Startsida>
           controller: _tabController,
           tabs: const <Widget>[
             Tab(
-              text: "DEVELOPERS RECOMEND",
+              text: "DEVS RECOMMEND",
             ),
             Tab(
               text: "RECENT REVIEWS",
@@ -44,7 +44,7 @@ class _MyStatefulWidgetState extends State<Startsida>
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => Sokning()),
+                  MaterialPageRoute(builder: (context) => SearchPage()),
                 );
               }),
         ],
@@ -53,10 +53,10 @@ class _MyStatefulWidgetState extends State<Startsida>
         controller: _tabController,
         children: const <Widget>[
           Center(
-            child: Mainpage(),
+            child: DevRecomend(),
           ),
           Center(
-            child: MinaReviews(),
+            child: RecentReviews(),
           ),
         ],
       ),

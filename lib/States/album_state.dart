@@ -5,7 +5,7 @@ import 'package:my_first_app/States/my_state.dart';
 import 'package:provider/provider.dart';
 import '../Screens/artist_info_view.dart';
 import '../Screens/skriv_review_view.dart';
-import '../model.dart';
+
 import './review_state.dart';
 
 class AlbumState extends StatefulWidget {
@@ -35,7 +35,7 @@ class _AlbumState extends State<AlbumState> {
             height: 300,
           ),
           Container(height: 10),
-          Text(rad.albumTitel,
+          Text(rad.albumTitle,
               style: const TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 25,
@@ -57,13 +57,13 @@ class _AlbumState extends State<AlbumState> {
           ElevatedButton(
               onPressed: () {
                 Provider.of<MyState>(context, listen: false)
-                    .setAA(rad.artistName, rad.albumTitel);
+                    .setAlbumArtist(rad.artistName, rad.albumTitle);
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => SkrivReview()));
               },
               child: const Text('Write Review')),
           ListTile(
-              title: Text(rad.description,
+              title: Text(rad.albumDescription,
                   style: const TextStyle(
                       fontWeight: FontWeight.bold, color: Colors.white))),
           Container(height: 10),

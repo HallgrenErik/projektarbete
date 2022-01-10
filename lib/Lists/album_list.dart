@@ -4,26 +4,27 @@ import 'package:my_first_app/States/my_state.dart';
 import 'package:provider/src/provider.dart';
 import '../Screens/album_info_view.dart';
 
-class AlbumSok extends StatefulWidget {
-  final List<SokItem> list;
+class AlbumResultList extends StatefulWidget {
+  final List<SearchItem> list;
 
-  AlbumSok(this.list);
+  AlbumResultList(this.list);
 
   @override
-  State<AlbumSok> createState() => _AlbumSokListState();
+  State<AlbumResultList> createState() => _AlbumResultListState();
 }
 
-class _AlbumSokListState extends State<AlbumSok> {
+class _AlbumResultListState extends State<AlbumResultList> {
   Widget build(BuildContext context) {
     return ListView.builder(
-      itemBuilder: (context, index) => sokrad(context, widget.list[index]),
+      itemBuilder: (context, index) => _searchTile(context, widget.list[index]),
       itemCount: widget.list.length,
     );
   }
 
-  Widget sokrad(context, rad) {
+  Widget _searchTile(context, rad) {
+    //if (rad.coverUrl == null) return Container();
     return Card(
-        color: const Color(0xFF66579C),
+        color: const Color(0xC5BCE6),
         child: ListTile(
           leading: Image.network(
             rad.coverUrl,
@@ -31,13 +32,13 @@ class _AlbumSokListState extends State<AlbumSok> {
             width: 100,
           ),
           title: Text(
-            rad.albumTitel,
-            style: textStyle(),
+            rad.albumTitle,
+            style: _textStyle(),
           ),
-          subtitle: Text(rad.artistName, style: textStyle()),
+          subtitle: Text(rad.artistName, style: _textStyle()),
           onTap: () {
             Provider.of<MyState>(context, listen: false)
-                .setAA(rad.artistName, rad.albumTitel);
+                .setAlbumArtist(rad.artistName, rad.albumTitle);
             Navigator.push(context,
                 MaterialPageRoute(builder: (context) => AlbumInfoView()));
           },
@@ -45,6 +46,6 @@ class _AlbumSokListState extends State<AlbumSok> {
   }
 }
 
-TextStyle textStyle() {
+TextStyle _textStyle() {
   return TextStyle(color: Colors.white);
 }

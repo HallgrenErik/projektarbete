@@ -1,16 +1,16 @@
-class SokItem {
-  String albumTitel;
+class SearchItem {
+  String albumTitle;
   String artistName;
   String coverUrl;
 
-  SokItem({
-    required this.albumTitel,
+  SearchItem({
+    required this.albumTitle,
     required this.artistName,
     required this.coverUrl,
   });
-  static SokItem sokItemFromJson(Map<String, dynamic> json) {
-    return SokItem(
-      albumTitel: json['name'],
+  static SearchItem searchItemFromJson(Map<String, dynamic> json) {
+    return SearchItem(
+      albumTitle: json['name'],
       artistName: json['artist'],
       coverUrl: json['image'][1]['#text'],
     );
