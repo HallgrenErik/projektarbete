@@ -5,6 +5,7 @@ import 'Screens/start_homepage.dart';
 
 void main() {
   var state = MyState();
+  state.getList();
 
   runApp(MultiProvider(
     providers: [

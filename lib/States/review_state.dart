@@ -83,6 +83,7 @@ class _ReviewState extends State<ReviewState> {
               authorText = authorReader.text;
               reviewResponse = reviewReader.text;
               Provider.of<MyState>(context, listen: false).addReview(
+                  rad.cover,
                   rad.albumTitel,
                   rad.artistName,
                   authorText,

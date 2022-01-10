@@ -1,4 +1,5 @@
 class CompiledData {
+  String albumCover;
   String album;
   String artist;
   String author;
@@ -6,7 +7,8 @@ class CompiledData {
   String reviewText;
 
   CompiledData(
-      {required this.album,
+      {required this.albumCover,
+      required this.album,
       required this.artist,
       required this.author,
       required this.rating,
@@ -14,6 +16,7 @@ class CompiledData {
 
   static Map<String, dynamic> toJson(CompiledData compiledData) {
     return {
+      'albumCover': compiledData.albumCover,
       'album': compiledData.album,
       'artist': compiledData.artist,
       'author': compiledData.author,
@@ -24,6 +27,7 @@ class CompiledData {
 
   static CompiledData fromJson(Map<String, dynamic> json) {
     return CompiledData(
+        albumCover: json['albumCover'],
         album: json['album'],
         artist: json['artist'],
         author: json['author'],

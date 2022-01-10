@@ -5,7 +5,7 @@ import 'dart:convert';
 import '../Items/review_item.dart';
 import '../Items/compiled_data_item.dart';
 
-const apiKey = '942463ea-2e2b-4263-983b-22755913b751';
+const apiKey = 'ae95a706-9bbf-408d-af3f-8387127de832';
 const apiURL = 'https://todoapp-api-pyq5q.ondigitalocean.app';
 
 class ReviewAPI {
