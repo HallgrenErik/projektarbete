@@ -33,10 +33,6 @@ class _AlbumSokListState extends State<AlbumSok> {
         style: textStyle(),
       ),
       subtitle: Text(rad.artistName, style: textStyle()),
-      trailing: Text(
-        'Den har 4.5',
-        style: textStyle(),
-      ),
       onTap: () {
         Provider.of<MyState>(context, listen: false)
             .setAA(rad.artistName, rad.albumTitel);
