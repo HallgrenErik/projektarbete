@@ -18,7 +18,7 @@ class ReviewState extends StatefulWidget {
 class _ReviewState extends State<ReviewState> {
   String authorText = 'Anonymous';
   final TextEditingController authorReader = TextEditingController();
-  int ratingValue = 0;
+  int ratingValue = 1;
   String reviewResponse = 'No review found.';
   final TextEditingController reviewReader = TextEditingController();
 
@@ -64,16 +64,30 @@ class _ReviewState extends State<ReviewState> {
             ),
           ),
         ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [iconEtt(), iconTva(), iconTre(), iconFyra(), iconFem()],
-        ),
+        DropdownButton<int>(
+            hint: const Text("Pick"),
+            value: ratingValue,
+            items: <int>[1, 2, 3, 4, 5].map((int value) {
+              return DropdownMenuItem<int>(
+                value: value,
+                child: Text(value.toString()),
+              );
+            }).toList(),
+            onChanged: (newVal) {
+              setState(() {
+                ratingValue = newVal!;
+              });
+            }),
         ElevatedButton(
             onPressed: () {
               authorText = authorReader.text;
               reviewResponse = reviewReader.text;
               Provider.of<MyState>(context, listen: false).addReview(
-                  rad.albumTitel, authorText, reviewResponse, ratingValue);
+                  rad.albumTitel,
+                  rad.artistName,
+                  authorText,
+                  reviewResponse,
+                  ratingValue);
               authorReader.clear();
               reviewReader.clear();
             },
@@ -84,7 +98,7 @@ class _ReviewState extends State<ReviewState> {
   }
 }
 
-Widget iconEtt() {
+/*Widget iconEtt() {
   Color ratingColor = Colors.black;
   return IconButton(
     icon: Icon(
@@ -152,4 +166,4 @@ Widget iconFem() {
       ratingColor = Colors.yellow;
     },
   );
-}
+}*/

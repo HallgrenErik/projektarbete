@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import '../States/my_state.dart';
+import '../Lists/review_list.dart';
+import 'package:provider/provider.dart';
 import '../model.dart';
 
 //byta namn på denna, kopplad till första sidan
@@ -19,24 +22,10 @@ class Mainpage extends StatelessWidget {
 class MinaReviews extends StatelessWidget {
   const MinaReviews({Key? key}) : super(key: key);
 
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ListView(
-        children: [
-          reviewItem(
-              albumTitel: 'Tänd ett Ljus', artist: 'AcDc', albumBetyg: '5/5'),
-          review('detta är en review'),
-          const Divider(color: Colors.white),
-          reviewItem(
-            albumTitel: 'S/M',
-            artist: 'The Weekend',
-            albumBetyg: '2.7/5',
-          ),
-          review(
-              'detta är en reviewdetta är en reviewdetta är en reviewdetta är en reviewdetta är en reviews'),
-          const Divider(),
-        ],
-      ),
-    );
+        body: Consumer<MyState>(
+            builder: (context, state, child) => ReviewList(state.list)));
   }
 }

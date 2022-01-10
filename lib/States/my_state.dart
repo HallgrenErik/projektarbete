@@ -24,9 +24,11 @@ class MyState extends ChangeNotifier {
     notifyListeners();
   }
 
-  void addReview(String albumX, authorX, reviewTextX, int ratingX) async {
+  void addReview(
+      String albumX, artistX, authorX, reviewTextX, int ratingX) async {
     final compile = CompiledData(
         album: albumX,
+        artist: artistX,
         author: authorX,
         rating: ratingX,
         reviewText: reviewTextX);

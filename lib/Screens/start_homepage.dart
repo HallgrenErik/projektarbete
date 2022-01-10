@@ -34,7 +34,7 @@ class _MyStatefulWidgetState extends State<Startsida>
               text: "HOME PAGE",
             ),
             Tab(
-              text: "MY REVIEWS",
+              text: "RECENT REVIEWS",
             ),
           ],
         ),
