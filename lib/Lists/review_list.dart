@@ -18,27 +18,28 @@ class ReviewList extends StatelessWidget {
   }
 
   Widget _reviewItem(context, review) {
-    return ListTile(
-        leading: Image.network(
-          review.compiledData.albumCover,
-          height: 100,
-          width: 100,
-        ),
-        title: Text(review.compiledData.album,
-            style: const TextStyle(color: Colors.white)),
-        subtitle: Text(review.compiledData.artist,
-            style: const TextStyle(color: Colors.white)),
-        trailing: Text(
-            review.compiledData.author +
-                ': ' +
-                review.compiledData.rating.toString() +
-                '/5',
-            style: const TextStyle(color: Colors.white)),
-        onTap: () {
-          Provider.of<MyState>(context, listen: false)
-              .setAA(review.compiledData.artist, review.compiledData.album);
-          Navigator.push(context,
-              MaterialPageRoute(builder: (context) => AlbumInfoView()));
-        });
+    return Card(
+        color: const Color(0xFF66579C),
+        child: ListTile(
+          leading: Image.network(
+            review.compiledData.albumCover,
+            height: 100,
+            width: 100,
+          ),
+          title: Text(review.compiledData.author,
+              style: const TextStyle(
+                  color: Colors.white, fontWeight: FontWeight.bold)),
+          subtitle: Text(review.compiledData.reviewText,
+              style: const TextStyle(color: Colors.white),
+              overflow: TextOverflow.ellipsis),
+          trailing: Text(review.compiledData.rating.toString() + '/5',
+              style: const TextStyle(color: Colors.white, fontSize: 20)),
+          onTap: () {
+            Provider.of<MyState>(context, listen: false)
+                .setAA(review.compiledData.artist, review.compiledData.album);
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => AlbumInfoView()));
+          },
+        ));
   }
 }

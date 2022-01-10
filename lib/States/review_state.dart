@@ -83,8 +83,12 @@ class _ReviewState extends State<ReviewState> {
             }),
         ElevatedButton(
             onPressed: () {
-              authorText = authorReader.text;
-              reviewResponse = reviewReader.text;
+              if (authorReader.text != '') {
+                authorText = authorReader.text;
+              }
+              if (reviewReader.text != '') {
+                reviewResponse = reviewReader.text;
+              }
               Provider.of<MyState>(context, listen: false).addReview(
                   rad.cover,
                   rad.albumTitel,
@@ -94,6 +98,7 @@ class _ReviewState extends State<ReviewState> {
                   ratingValue);
               authorReader.clear();
               reviewReader.clear();
+              Navigator.pop(context);
             },
             style: ElevatedButton.styleFrom(primary: Colors.purple),
             child: const Text('ADD'))
