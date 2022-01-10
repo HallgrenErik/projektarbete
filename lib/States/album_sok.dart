@@ -22,24 +22,26 @@ class _AlbumSokListState extends State<AlbumSok> {
   }
 
   Widget sokrad(context, rad) {
-    return ListTile(
-      leading: Image.network(
-        rad.coverUrl,
-        height: 100,
-        width: 100,
-      ),
-      title: Text(
-        rad.albumTitel,
-        style: textStyle(),
-      ),
-      subtitle: Text(rad.artistName, style: textStyle()),
-      onTap: () {
-        Provider.of<MyState>(context, listen: false)
-            .setAA(rad.artistName, rad.albumTitel);
-        Navigator.push(
-            context, MaterialPageRoute(builder: (context) => AlbumInfoView()));
-      },
-    );
+    return Card(
+        color: const Color(0xFF66579C),
+        child: ListTile(
+          leading: Image.network(
+            rad.coverUrl,
+            height: 100,
+            width: 100,
+          ),
+          title: Text(
+            rad.albumTitel,
+            style: textStyle(),
+          ),
+          subtitle: Text(rad.artistName, style: textStyle()),
+          onTap: () {
+            Provider.of<MyState>(context, listen: false)
+                .setAA(rad.artistName, rad.albumTitel);
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => AlbumInfoView()));
+          },
+        ));
   }
 }
 
