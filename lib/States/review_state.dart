@@ -31,7 +31,7 @@ class _ReviewState extends State<ReviewState> {
     return SingleChildScrollView(
         child: Column(
       children: [
-        Text(rad.albumTitel,
+        Text(rad.albumTitle,
             style: const TextStyle(fontSize: 30, color: Colors.white)),
         Text(rad.artistName,
             style: const TextStyle(fontSize: 20, color: Colors.white)),
@@ -91,7 +91,7 @@ class _ReviewState extends State<ReviewState> {
               }
               Provider.of<MyState>(context, listen: false).addReview(
                   rad.cover,
-                  rad.albumTitel,
+                  rad.albumTitle,
                   rad.artistName,
                   authorText,
                   reviewResponse,

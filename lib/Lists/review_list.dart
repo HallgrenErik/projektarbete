@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../Screens/album_info_view.dart';
-import '../States/album_sok.dart';
+import 'album_list.dart';
 import 'package:my_first_app/States/my_state.dart';
 import 'package:provider/provider.dart';
 
@@ -19,7 +19,7 @@ class ReviewList extends StatelessWidget {
 
   Widget _reviewItem(context, review) {
     return Card(
-        color: const Color(0xFF66579C),
+        color: const Color(0xC5BCE6),
         child: ListTile(
           leading: Image.network(
             review.compiledData.albumCover,
@@ -35,8 +35,8 @@ class ReviewList extends StatelessWidget {
           trailing: Text(review.compiledData.rating.toString() + '/5',
               style: const TextStyle(color: Colors.white, fontSize: 20)),
           onTap: () {
-            Provider.of<MyState>(context, listen: false)
-                .setAA(review.compiledData.artist, review.compiledData.album);
+            Provider.of<MyState>(context, listen: false).setAlbumArtist(
+                review.compiledData.artist, review.compiledData.album);
             Navigator.push(context,
                 MaterialPageRoute(builder: (context) => AlbumInfoView()));
           },

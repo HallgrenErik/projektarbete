@@ -14,16 +14,16 @@ class ArtistState extends StatefulWidget {
 class _ArtistState extends State<ArtistState> {
   @override
   Widget build(BuildContext context) {
-    return _artistrad(context, widget.artist);
+    return _artistPage(context, widget.artist);
   }
 
-  Widget _artistrad(context, rad) {
-    if (rad == null) return Container();
+  Widget _artistPage(context, info) {
+    if (info == null) return Container();
     return SingleChildScrollView(
       child: Column(
         children: [
           Container(height: 10),
-          Text(rad.artistName,
+          Text(info.artistName,
               style: const TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 75.5,
@@ -31,7 +31,7 @@ class _ArtistState extends State<ArtistState> {
               )),
           Container(
             child: Text(
-              rad.artistDescription,
+              info.artistDescription,
               style: const TextStyle(
                   fontSize: 15,
                   color: Colors.white,

@@ -1,28 +1,88 @@
 import 'package:flutter/material.dart';
-import 'package:my_first_app/Api/api_album.dart';
-import 'package:my_first_app/Api/api_review.dart';
-import 'package:my_first_app/Api/api_sok_resultat.dart';
-import 'package:my_first_app/Api/api_start.dart';
-import 'package:my_first_app/Items/album_item.dart';
-import 'package:my_first_app/Items/compiled_data_item.dart';
-import 'package:my_first_app/Items/sok_item.dart';
-import 'package:my_first_app/Items/start_item.dart';
-import 'package:provider/provider.dart';
+import '../Api/api_album.dart';
+import '../Api/api_review.dart';
+import '../Api/api_sok_resultat.dart';
+import '../Api/api_start.dart';
+import '../Items/album_item.dart';
+import '../Items/compiled_data_item.dart';
+import '../Items/sok_item.dart';
+import '../Items/start_item.dart';
 import '../Api/api_artist.dart';
 import '../Items/artist_item.dart';
 import '../Items/review_item.dart';
 
 class MyState extends ChangeNotifier {
+  //Listor//
   List<Review> _list = [];
+
+  List<StartItem> _startList = [];
+
+  List<StartItem> get startList => _startList;
+
+  List<Review> get list => _list;
+
+  List<SearchItem> _searchList = [];
+
+  List<SearchItem> get searchList => _searchList;
+
+  //Reviews//
   Review? _review;
 
   Review? get review => _review;
 
-  List<Review> get list => _list;
+  //Items//
+  AlbumItem? _album = null;
+
+  AlbumItem? get album => _album;
+
+  ArtistItem? _artist;
+
+  ArtistItem? get artist => _artist;
+
+  //String//
+  String _searchWord = '';
+
+  String get searchWord => _searchWord;
+
+  String _newAlbum = '';
+
+  String _newArtist = '';
+
+  String get newAlbum => _newAlbum;
+
+  String get newArtist => _newArtist;
+
+  String _artistInfo = '';
+
+  String get artistInfo => _artistInfo;
 
   Future getList() async {
     List<Review> list = await ReviewAPI.reviewList();
     _list = list;
+    notifyListeners();
+  }
+
+  Future fetchResultList() async {
+    List<SearchItem> sokList = await ApiSearchList.doAlbumSearch(searchWord);
+    _searchList = sokList;
+    notifyListeners();
+  }
+
+  Future getAlbum() async {
+    AlbumItem album = await ApiAlbumFetch.fetchAlbum(newAlbum, newArtist);
+    _album = album;
+    notifyListeners();
+  }
+
+  Future getArtist() async {
+    ArtistItem artist = await ApiArtistFetch.fetchArtist(artistInfo);
+    _artist = artist;
+    notifyListeners();
+  }
+
+  Future getStartList() async {
+    List<StartItem> startList = await ApiStartList.fetchStartList();
+    _startList = startList;
     notifyListeners();
   }
 
@@ -40,73 +100,20 @@ class MyState extends ChangeNotifier {
     notifyListeners();
   }
 
-  AlbumItem? _album = null;
-
-  AlbumItem? get album => _album;
-
-  List<SokItem> _sokList = [];
-
-  List<SokItem> get soklist => _sokList;
-
-  ArtistItem? _artist;
-
-  ArtistItem? get artist => _artist;
-
-  Future hamtaLista() async {
-    List<SokItem> sokList = await SokLista.doAlbumSearch(sokord);
-    _sokList = sokList;
-    notifyListeners();
-  }
-
-  Future hamtaAlbum() async {
-    AlbumItem album = await AlbumFetcher.fetchAlbum(newAlbum, newArtist);
-    _album = album;
-    notifyListeners();
-  }
-
-  Future hamtaArtist() async {
-    ArtistItem artist = await ArtistFetcher.fetchArtist(artistInfo);
-    _artist = artist;
-    notifyListeners();
-  }
-
-  String _sokord = '';
-
-  String get sokord => _sokord;
-
   void setWord(String ord) {
-    _sokord = ord;
-    print(_sokord);
+    _searchWord = ord;
+    print(_searchWord);
     notifyListeners();
   }
 
-  String _newAlbum = '';
-  String _newArtist = '';
-
-  String get newAlbum => _newAlbum;
-  String get newArtist => _newArtist;
-
-  void setAA(String newArtist, String newAlbum) {
+  void setAlbumArtist(String newArtist, String newAlbum) {
     _newAlbum = newAlbum;
     _newArtist = newArtist;
     notifyListeners();
   }
 
-  String _artistInfo = '';
-  String get artistInfo => _artistInfo;
-
   void setArtist(String artistInfo) {
     _artistInfo = artistInfo;
-    notifyListeners();
-  }
-
-  List<StartItem> _startList = [];
-
-  List<StartItem> get startList => _startList;
-
-  Future hamtaStartLista() async {
-    List<StartItem> startList = await StartLista.getStartList();
-    _startList = startList;
     notifyListeners();
   }
 }

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_first_app/States/my_state.dart';
 import 'package:provider/provider.dart';
-import 'Screens/start_homepage.dart';
+import 'Screens/start_page.dart';
 
 void main() {
   var state = MyState();
@@ -10,7 +10,6 @@ void main() {
   runApp(MultiProvider(
     providers: [
       ChangeNotifierProvider(create: (context) => state, child: MyApp()),
-      //ChangeNotifierProvider(create: (context) => Sokord()),
     ],
     child: MyApp(),
   ));
@@ -20,8 +19,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Start Sida',
-      home: Startsida(),
+      title: '',
+      home: StartPage(),
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
           primarySwatch: createMaterialColor(const Color(0xFF66579C)),
