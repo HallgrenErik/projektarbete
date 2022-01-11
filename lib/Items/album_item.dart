@@ -2,13 +2,13 @@ class AlbumItem {
   String albumTitle;
   String artistName;
   String cover;
-  String albumDescription;
+  String? albumDescription;
 
   AlbumItem({
     required this.albumTitle,
     required this.artistName,
     required this.cover,
-    required this.albumDescription,
+    this.albumDescription,
   });
 
   static AlbumItem albumFromJson(Map<String, dynamic> json) {
@@ -16,7 +16,7 @@ class AlbumItem {
       albumTitle: json["name"],
       artistName: json["artist"],
       cover: json['image'][4]['#text'],
-      albumDescription: json['wiki']['summary'],
+      albumDescription: json['wiki']?['summary'] ?? 'No description found',
     );
   }
 }
