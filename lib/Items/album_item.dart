@@ -2,13 +2,13 @@ class AlbumItem {
   String albumTitle;
   String artistName;
   String cover;
-  String albumDescription;
+  String? albumDescription;
 
   AlbumItem({
     required this.albumTitle,
     required this.artistName,
     required this.cover,
-    required this.albumDescription,
+    this.albumDescription,
   });
 
   static AlbumItem albumFromJson(Map<String, dynamic> json) {

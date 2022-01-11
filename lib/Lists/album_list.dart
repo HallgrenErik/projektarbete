@@ -23,6 +23,9 @@ class _AlbumResultListState extends State<AlbumResultList> {
 
   Widget _searchTile(context, rad) {
     //if (rad.coverUrl == null) return Container();
+    if (rad.coverUrl == '') return Container();
+    if (rad.artistName == '') return Container();
+
     return Card(
         color: const Color(0xC5BCE6),
         child: ListTile(

@@ -1,12 +1,12 @@
 class SearchItem {
   String albumTitle;
   String artistName;
-  String coverUrl;
+  String? coverUrl = '';
 
   SearchItem({
     required this.albumTitle,
     required this.artistName,
-    required this.coverUrl,
+    this.coverUrl,
   });
   static SearchItem searchItemFromJson(Map<String, dynamic> json) {
     return SearchItem(

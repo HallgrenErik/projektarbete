@@ -18,7 +18,7 @@ class _ArtistState extends State<ArtistState> {
   }
 
   Widget _artistPage(context, info) {
-    if (info == null) return Container();
+    if (info.artistDescription == null) return Container();
     return SingleChildScrollView(
       child: Column(
         children: [
