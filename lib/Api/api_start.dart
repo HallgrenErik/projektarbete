@@ -1,8 +1,8 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-import 'package:my_first_app/Items/start_item.dart';
+import '../Items/start_item.dart';
 
-const API_KEY = 'c995db7b4ae865f6a4243e90eddc9593';
+const apiKey = 'c995db7b4ae865f6a4243e90eddc9593';
 
 class ApiStartList {
   static Future<List<StartItem>> fetchStartList() async {
