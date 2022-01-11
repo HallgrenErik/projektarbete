@@ -51,7 +51,6 @@ class _ReviewState extends State<ReviewState> {
           ),
         ),
         Container(
-          height: 100,
           margin: const EdgeInsets.all(5),
           decoration: BoxDecoration(
               color: Colors.white,
@@ -60,9 +59,9 @@ class _ReviewState extends State<ReviewState> {
           child: Padding(
             padding: const EdgeInsets.only(left: 20),
             child: TextField(
-              controller: reviewReader,
-              decoration: const InputDecoration(hintText: "Write a Review"),
-            ),
+                controller: reviewReader,
+                decoration: const InputDecoration(hintText: "Write a Review"),
+                maxLines: null),
           ),
         ),
         const Text('Lägg gärna till ett beyg',
