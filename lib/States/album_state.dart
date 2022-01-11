@@ -19,10 +19,10 @@ class AlbumState extends StatefulWidget {
 
 class _AlbumState extends State<AlbumState> {
   Widget build(BuildContext context) {
-    return _albumrad(context, widget.album, widget.list);
+    return _albumPage(context, widget.album, widget.list);
   }
 
-  Widget _albumrad(context, rad, list) {
+  Widget _albumPage(context, rad, list) {
     if (rad == null) return Container();
     return SingleChildScrollView(
       child: Column(
