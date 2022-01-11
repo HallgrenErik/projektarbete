@@ -7,10 +7,8 @@ void main() {
   var state = MyState();
   state.getList();
 
-  runApp(MultiProvider(
-    providers: [
-      ChangeNotifierProvider(create: (context) => state, child: MyApp()),
-    ],
+  runApp(ChangeNotifierProvider(
+    create: (context) => state,
     child: MyApp(),
   ));
 }
