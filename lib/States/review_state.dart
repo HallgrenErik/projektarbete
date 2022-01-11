@@ -72,7 +72,7 @@ class _ReviewState extends State<ReviewState> {
             ),
           ),
         ),
-        Text('Give the Album a Rating (1-5)',
+        const Text('Give the Album a Rating (1-5)',
             style: const TextStyle(fontSize: 20, color: Colors.white70)),
         DropdownButton<int>(
             dropdownColor: Colors.black,
@@ -83,7 +83,7 @@ class _ReviewState extends State<ReviewState> {
                 value: value,
                 child: Text(
                   value.toString(),
-                  style: TextStyle(
+                  style: const TextStyle(
                     color: Colors.white,
                   ),
                 ),
@@ -119,73 +119,3 @@ class _ReviewState extends State<ReviewState> {
     ));
   }
 }
-
-/*Widget iconEtt() {
-  Color ratingColor = Colors.black;
-  return IconButton(
-    icon: Icon(
-      Icons.star,
-      color: ratingColor,
-      size: 40,
-    ),
-    onPressed: () {
-      ratingColor = Colors.yellow;
-    },
-  );
-}
-
-Widget iconTva() {
-  Color ratingColor = Colors.black;
-  return IconButton(
-    icon: Icon(
-      Icons.star,
-      color: ratingColor,
-      size: 40,
-    ),
-    onPressed: () {
-      ratingColor = Colors.black;
-    },
-  );
-}
-
-Widget iconTre() {
-  Color ratingColor = Colors.black;
-  return IconButton(
-    icon: Icon(
-      Icons.star,
-      color: ratingColor,
-      size: 40,
-    ),
-    onPressed: () {
-      ratingColor = Colors.black;
-    },
-  );
-}
-
-Widget iconFyra() {
-  Color ratingColor = Colors.black;
-  return IconButton(
-    icon: Icon(
-      Icons.star,
-      color: ratingColor,
-      size: 40,
-    ),
-    onPressed: () {
-      ratingColor = Colors.yellow;
-    },
-  );
-}
-
-Widget iconFem() {
-  Color ratingColor = Colors.black;
-  return IconButton(
-    icon: Icon(
-      Icons.star,
-      color: ratingColor,
-      size: 40,
-    ),
-    onPressed: () {
-      ratingColor = Colors.yellow;
-    },
-  );
-}*/

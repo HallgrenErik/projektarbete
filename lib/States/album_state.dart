@@ -5,13 +5,13 @@ import 'package:my_first_app/States/my_state.dart';
 import 'package:provider/provider.dart';
 import '../Screens/artist_info_view.dart';
 import '../Screens/skriv_review_view.dart';
-
-import './review_state.dart';
+import '../Items/review_item.dart';
 
 class AlbumState extends StatefulWidget {
   final AlbumItem? album;
+  final List<Review> list;
 
-  AlbumState(this.album);
+  AlbumState(this.album, this.list);
 
   @override
   State<AlbumState> createState() => _AlbumState();
@@ -19,10 +19,10 @@ class AlbumState extends StatefulWidget {
 
 class _AlbumState extends State<AlbumState> {
   Widget build(BuildContext context) {
-    return _albumrad(context, widget.album);
+    return _albumPage(context, widget.album, widget.list);
   }
 
-  Widget _albumrad(context, rad) {
+  Widget _albumPage(context, rad, list) {
     if (rad == null) return Container();
     return SingleChildScrollView(
       child: Column(
@@ -67,8 +67,15 @@ class _AlbumState extends State<AlbumState> {
                   style: const TextStyle(
                       fontWeight: FontWeight.bold, color: Colors.white))),
           Container(height: 10),
+          AlbumReviewList(_filter(list, rad.albumTitle))
         ],
       ),
     );
+  }
+
+  List<Review> _filter(list, filterBy) {
+    return list
+        .where((review) => review.compiledData.album == filterBy)
+        .toList();
   }
 }
