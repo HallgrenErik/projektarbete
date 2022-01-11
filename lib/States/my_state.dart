@@ -56,6 +56,10 @@ class MyState extends ChangeNotifier {
 
   String get artistInfo => _artistInfo;
 
+  String _filter = '';
+
+  String get filterBy => _filter;
+
   Future getList() async {
     List<Review> list = await ReviewAPI.reviewList();
     _list = list;
@@ -83,6 +87,11 @@ class MyState extends ChangeNotifier {
   Future getStartList() async {
     List<StartItem> startList = await ApiStartList.fetchStartList();
     _startList = startList;
+    notifyListeners();
+  }
+
+  void filter(String filter) {
+    _filter = filter;
     notifyListeners();
   }
 

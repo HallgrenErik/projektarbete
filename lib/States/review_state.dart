@@ -65,8 +65,8 @@ class _ReviewState extends State<ReviewState> {
             ),
           ),
         ),
-        Text('Lägg gärna till ett beyg',
-            style: const TextStyle(fontSize: 20, color: Colors.white)),
+        const Text('Lägg gärna till ett beyg',
+            style: TextStyle(fontSize: 20, color: Colors.white)),
         DropdownButton<int>(
             dropdownColor: Colors.black,
             hint: const Text("Pick"),
@@ -76,7 +76,7 @@ class _ReviewState extends State<ReviewState> {
                 value: value,
                 child: Text(
                   value.toString(),
-                  style: TextStyle(
+                  style: const TextStyle(
                     color: Colors.white,
                   ),
                 ),
@@ -112,73 +112,3 @@ class _ReviewState extends State<ReviewState> {
     ));
   }
 }
-
-/*Widget iconEtt() {
-  Color ratingColor = Colors.black;
-  return IconButton(
-    icon: Icon(
-      Icons.star,
-      color: ratingColor,
-      size: 40,
-    ),
-    onPressed: () {
-      ratingColor = Colors.yellow;
-    },
-  );
-}
-
-Widget iconTva() {
-  Color ratingColor = Colors.black;
-  return IconButton(
-    icon: Icon(
-      Icons.star,
-      color: ratingColor,
-      size: 40,
-    ),
-    onPressed: () {
-      ratingColor = Colors.black;
-    },
-  );
-}
-
-Widget iconTre() {
-  Color ratingColor = Colors.black;
-  return IconButton(
-    icon: Icon(
-      Icons.star,
-      color: ratingColor,
-      size: 40,
-    ),
-    onPressed: () {
-      ratingColor = Colors.black;
-    },
-  );
-}
-
-Widget iconFyra() {
-  Color ratingColor = Colors.black;
-  return IconButton(
-    icon: Icon(
-      Icons.star,
-      color: ratingColor,
-      size: 40,
-    ),
-    onPressed: () {
-      ratingColor = Colors.yellow;
-    },
-  );
-}
-
-Widget iconFem() {
-  Color ratingColor = Colors.black;
-  return IconButton(
-    icon: Icon(
-      Icons.star,
-      color: ratingColor,
-      size: 40,
-    ),
-    onPressed: () {
-      ratingColor = Colors.yellow;
-    },
-  );
-}*/
