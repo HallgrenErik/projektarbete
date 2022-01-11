@@ -1,13 +1,13 @@
 class StartItem {
   String startAlbumTitle;
   String startArtistName;
-  String startCoverUrl;
+  String? startCoverUrl = '';
   int startPlayCount;
 
   StartItem(
       {required this.startAlbumTitle,
       required this.startArtistName,
-      required this.startCoverUrl,
+      this.startCoverUrl,
       required this.startPlayCount});
   static StartItem startItemFromJson(Map<String, dynamic> json) {
     return StartItem(

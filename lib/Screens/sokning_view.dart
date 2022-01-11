@@ -38,7 +38,6 @@ class _SearchPageState extends State<SearchPage> {
               onPressed: () {
                 Provider.of<MyState>(context, listen: false)
                     .setWord(myController.text);
-
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => SearchResultView()),

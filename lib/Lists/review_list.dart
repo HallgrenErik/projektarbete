@@ -14,6 +14,7 @@ class ReviewList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView(
+        reverse: true,
         children: list.map((review) => _reviewItem(context, review)).toList());
   }
 
