@@ -43,12 +43,11 @@ class _ReviewState extends State<ReviewState> {
         Text(rad.artistName,
             style: const TextStyle(fontSize: 20, color: Colors.white)),
         Container(
-          width: 200,
-          height: 200,
+          margin: const EdgeInsets.all(5),
           decoration: BoxDecoration(
-            color: Colors.white38,
-            border: Border.all(color: Colors.white38, width: 3),
-          ),
+              color: Colors.white38,
+              border: Border.all(color: Colors.white38, width: 3),
+              borderRadius: BorderRadius.circular(10)),
           child: TextField(
             controller: authorReader,
             decoration:
