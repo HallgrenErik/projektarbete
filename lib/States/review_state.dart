@@ -43,18 +43,16 @@ class _ReviewState extends State<ReviewState> {
         Text(rad.artistName,
             style: const TextStyle(fontSize: 20, color: Colors.white)),
         Container(
-          margin: const EdgeInsets.all(30),
+          width: 200,
+          height: 200,
           decoration: BoxDecoration(
-              color: Colors.white38,
-              border: Border.all(color: Colors.white38, width: 3),
-              borderRadius: BorderRadius.circular(10)),
-          child: Padding(
-            padding: const EdgeInsets.only(left: 20),
-            child: TextField(
-              controller: authorReader,
-              decoration:
-                  const InputDecoration(hintText: "Optional: Write Username"),
-            ),
+            color: Colors.white38,
+            border: Border.all(color: Colors.white38, width: 3),
+          ),
+          child: TextField(
+            controller: authorReader,
+            decoration:
+                const InputDecoration(hintText: "Optional: Write Username"),
           ),
         ),
         Container(
@@ -72,7 +70,7 @@ class _ReviewState extends State<ReviewState> {
           ),
         ),
         const Text('Give the Album a Rating (1-5)',
-            style: const TextStyle(fontSize: 20, color: Colors.white70)),
+            style: TextStyle(fontSize: 20, color: Colors.white70)),
         DropdownButton<int>(
             dropdownColor: Colors.black,
             hint: const Text("Pick"),
@@ -82,7 +80,7 @@ class _ReviewState extends State<ReviewState> {
                 value: value,
                 child: Text(
                   value.toString(),
-                  style: const TextStyle(
+                  style: TextStyle(
                     color: Colors.white,
                   ),
                 ),
@@ -118,3 +116,73 @@ class _ReviewState extends State<ReviewState> {
     ));
   }
 }
+
+/*Widget iconEtt() {
+  Color ratingColor = Colors.black;
+  return IconButton(
+    icon: Icon(
+      Icons.star,
+      color: ratingColor,
+      size: 40,
+    ),
+    onPressed: () {
+      ratingColor = Colors.yellow;
+    },
+  );
+}
+
+Widget iconTva() {
+  Color ratingColor = Colors.black;
+  return IconButton(
+    icon: Icon(
+      Icons.star,
+      color: ratingColor,
+      size: 40,
+    ),
+    onPressed: () {
+      ratingColor = Colors.black;
+    },
+  );
+}
+
+Widget iconTre() {
+  Color ratingColor = Colors.black;
+  return IconButton(
+    icon: Icon(
+      Icons.star,
+      color: ratingColor,
+      size: 40,
+    ),
+    onPressed: () {
+      ratingColor = Colors.black;
+    },
+  );
+}
+
+Widget iconFyra() {
+  Color ratingColor = Colors.black;
+  return IconButton(
+    icon: Icon(
+      Icons.star,
+      color: ratingColor,
+      size: 40,
+    ),
+    onPressed: () {
+      ratingColor = Colors.yellow;
+    },
+  );
+}
+
+Widget iconFem() {
+  Color ratingColor = Colors.black;
+  return IconButton(
+    icon: Icon(
+      Icons.star,
+      color: ratingColor,
+      size: 40,
+    ),
+    onPressed: () {
+      ratingColor = Colors.yellow;
+    },
+  );
+}*/

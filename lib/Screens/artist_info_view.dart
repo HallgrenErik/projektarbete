@@ -13,7 +13,7 @@ class ArtistView extends StatelessWidget {
             icon: Icon(Icons.home),
             onPressed: () {
               Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => StartPage()));
+                  MaterialPageRoute(builder: (context) => const StartPage()));
             }),
       ]),
       body: Consumer<MyState>(
