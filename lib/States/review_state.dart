@@ -43,18 +43,16 @@ class _ReviewState extends State<ReviewState> {
         Text(rad.artistName,
             style: const TextStyle(fontSize: 20, color: Colors.white)),
         Container(
-          margin: const EdgeInsets.all(30),
+          width: 200,
+          height: 200,
           decoration: BoxDecoration(
-              color: Colors.white38,
-              border: Border.all(color: Colors.white38, width: 3),
-              borderRadius: BorderRadius.circular(10)),
-          child: Padding(
-            padding: const EdgeInsets.only(left: 20),
-            child: TextField(
-              controller: authorReader,
-              decoration:
-                  const InputDecoration(hintText: "Optional: Write Username"),
-            ),
+            color: Colors.white38,
+            border: Border.all(color: Colors.white38, width: 3),
+          ),
+          child: TextField(
+            controller: authorReader,
+            decoration:
+                const InputDecoration(hintText: "Optional: Write Username"),
           ),
         ),
         Container(
@@ -72,8 +70,8 @@ class _ReviewState extends State<ReviewState> {
             ),
           ),
         ),
-        Text('Give the Album a Rating (1-5)',
-            style: const TextStyle(fontSize: 20, color: Colors.white70)),
+        const Text('Give the Album a Rating (1-5)',
+            style: TextStyle(fontSize: 20, color: Colors.white70)),
         DropdownButton<int>(
             dropdownColor: Colors.black,
             hint: const Text("Pick"),
