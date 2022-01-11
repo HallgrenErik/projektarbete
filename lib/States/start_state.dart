@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:my_first_app/Items/sok_item.dart';
-import 'package:my_first_app/Items/start_item.dart';
-import 'package:my_first_app/States/my_state.dart';
-import 'package:provider/src/provider.dart';
+import '../Items/start_item.dart';
+import '../States/my_state.dart';
+import 'package:provider/provider.dart';
 import '../Screens/album_info_view.dart';
 
 class DevPage extends StatefulWidget {
