@@ -31,6 +31,13 @@ class _ReviewState extends State<ReviewState> {
     return SingleChildScrollView(
         child: Column(
       children: [
+        Container(
+          height: 10,
+        ),
+        Image.network(rad.cover, height: 150),
+        Container(
+          height: 10,
+        ),
         Text(rad.albumTitle,
             style: const TextStyle(fontSize: 30, color: Colors.white)),
         Text(rad.artistName,
@@ -38,8 +45,8 @@ class _ReviewState extends State<ReviewState> {
         Container(
           margin: const EdgeInsets.all(30),
           decoration: BoxDecoration(
-              color: Colors.white,
-              border: Border.all(color: Colors.black, width: 3),
+              color: Colors.white38,
+              border: Border.all(color: Colors.white38, width: 3),
               borderRadius: BorderRadius.circular(10)),
           child: Padding(
             padding: const EdgeInsets.only(left: 20),
@@ -54,8 +61,8 @@ class _ReviewState extends State<ReviewState> {
           height: 100,
           margin: const EdgeInsets.all(5),
           decoration: BoxDecoration(
-              color: Colors.white,
-              border: Border.all(color: Colors.black, width: 3),
+              color: Colors.white38,
+              border: Border.all(color: Colors.white38, width: 3),
               borderRadius: BorderRadius.circular(10)),
           child: Padding(
             padding: const EdgeInsets.only(left: 20),
@@ -65,8 +72,8 @@ class _ReviewState extends State<ReviewState> {
             ),
           ),
         ),
-        const Text('Lägg gärna till ett beyg',
-            style: TextStyle(fontSize: 20, color: Colors.white)),
+        const Text('Give the Album a Rating (1-5)',
+            style: const TextStyle(fontSize: 20, color: Colors.white70)),
         DropdownButton<int>(
             dropdownColor: Colors.black,
             hint: const Text("Pick"),
@@ -106,7 +113,7 @@ class _ReviewState extends State<ReviewState> {
               reviewReader.clear();
               Navigator.pop(context);
             },
-            style: ElevatedButton.styleFrom(primary: Colors.purple),
+            style: ElevatedButton.styleFrom(primary: Colors.deepPurple),
             child: const Text('ADD'))
       ],
     ));
