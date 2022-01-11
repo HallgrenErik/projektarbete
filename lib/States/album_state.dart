@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:my_first_app/Items/album_item.dart';
-import 'package:my_first_app/Lists/review_list.dart';
-import 'package:my_first_app/States/my_state.dart';
+import '../Items/album_item.dart';
+import '../Lists/review_list.dart';
+import '../States/my_state.dart';
 import 'package:provider/provider.dart';
 import '../Screens/artist_info_view.dart';
 import '../Screens/skriv_review_view.dart';

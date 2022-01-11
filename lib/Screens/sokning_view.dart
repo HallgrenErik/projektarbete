@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_first_app/States/my_state.dart';
+import '../States/my_state.dart';
 import 'package:provider/provider.dart';
 import 'sok_resultat_view.dart';
 

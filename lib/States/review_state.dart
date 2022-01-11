@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import '../Items/album_item.dart';
 import 'package:provider/provider.dart';
-
-import '../Items/review_item.dart';
-import '../Api/api_review.dart';
 import 'my_state.dart';
 
 class ReviewState extends StatefulWidget {
@@ -115,73 +112,3 @@ class _ReviewState extends State<ReviewState> {
     ));
   }
 }
-
-/*Widget iconEtt() {
-  Color ratingColor = Colors.black;
-  return IconButton(
-    icon: Icon(
-      Icons.star,
-      color: ratingColor,
-      size: 40,
-    ),
-    onPressed: () {
-      ratingColor = Colors.yellow;
-    },
-  );
-}
-
-Widget iconTva() {
-  Color ratingColor = Colors.black;
-  return IconButton(
-    icon: Icon(
-      Icons.star,
-      color: ratingColor,
-      size: 40,
-    ),
-    onPressed: () {
-      ratingColor = Colors.black;
-    },
-  );
-}
-
-Widget iconTre() {
-  Color ratingColor = Colors.black;
-  return IconButton(
-    icon: Icon(
-      Icons.star,
-      color: ratingColor,
-      size: 40,
-    ),
-    onPressed: () {
-      ratingColor = Colors.black;
-    },
-  );
-}
-
-Widget iconFyra() {
-  Color ratingColor = Colors.black;
-  return IconButton(
-    icon: Icon(
-      Icons.star,
-      color: ratingColor,
-      size: 40,
-    ),
-    onPressed: () {
-      ratingColor = Colors.yellow;
-    },
-  );
-}
-
-Widget iconFem() {
-  Color ratingColor = Colors.black;
-  return IconButton(
-    icon: Icon(
-      Icons.star,
-      color: ratingColor,
-      size: 40,
-    ),
-    onPressed: () {
-      ratingColor = Colors.yellow;
-    },
-  );
-}*/
