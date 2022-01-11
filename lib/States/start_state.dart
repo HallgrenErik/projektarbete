@@ -23,6 +23,7 @@ class _DevPageState extends State<DevPage> {
   }
 
   Widget startTile(context, sak) {
+    if (sak.startCoverUrl == '') return Container();
     return Card(
         color: const Color(0xC5BCE6),
         child: ListTile(
