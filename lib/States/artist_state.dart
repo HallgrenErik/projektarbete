@@ -22,13 +22,24 @@ class _ArtistState extends State<ArtistState> {
     return SingleChildScrollView(
       child: Column(
         children: [
-          Container(height: 10),
-          Text(info.artistName,
-              style: const TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 75.5,
-                color: Colors.white,
-              )),
+          Container(
+              width: 800,
+              decoration: BoxDecoration(
+                  color: Colors.black87,
+                  border: Border.all(color: Colors.black87, width: 3),
+                  borderRadius: BorderRadius.circular(5)),
+              child: Text(info.artistName,
+                  textAlign: TextAlign.center,
+                  style: const TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 60,
+                    color: Colors.white,
+                  ))),
+          Container(
+            child: Text("Genre: " + info.genre,
+                style: TextStyle(color: Colors.white, fontSize: 20)),
+            margin: const EdgeInsets.all(5),
+          ),
           Container(
             child: Text(
               info.artistDescription,
