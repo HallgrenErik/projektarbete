@@ -9,6 +9,8 @@ class AlbumInfoView extends StatelessWidget {
   Widget build(BuildContext context) {
     Provider.of<MyState>(context, listen: false).getAlbum();
     Provider.of<MyState>(context, listen: false).getList();
+    Provider.of<MyState>(context, listen: false).getTrack();
+
     return Scaffold(
       appBar: AppBar(
         title: const Text(
@@ -26,7 +28,7 @@ class AlbumInfoView extends StatelessWidget {
       ),
       body: Consumer<MyState>(
           builder: (context, state, child) =>
-              AlbumState(state.album, state.list)),
+              AlbumState(state.album, state.list, state.tracklist)),
     );
   }
 }

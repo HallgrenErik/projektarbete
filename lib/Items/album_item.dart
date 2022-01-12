@@ -21,3 +21,18 @@ class AlbumItem {
     );
   }
 }
+
+class TrackItem {
+  String albumTitle;
+  String artistName;
+  String? track;
+
+  TrackItem({required this.albumTitle, required this.artistName, this.track});
+
+  static TrackItem albumFromJson(Map<String, dynamic> json) {
+    return TrackItem(
+        albumTitle: json["name"],
+        artistName: json["artist"],
+        track: json['tracks']['track'][1]['name']);
+  }
+}

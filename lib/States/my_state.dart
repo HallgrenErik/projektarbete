@@ -17,11 +17,11 @@ class MyState extends ChangeNotifier {
 
   List<StartItem> _startList = [];
 
+  List<SearchItem> _searchList = [];
+
   List<StartItem> get startList => _startList;
 
   List<Review> get list => _list;
-
-  List<SearchItem> _searchList = [];
 
   List<SearchItem> get searchList => _searchList;
 
@@ -31,7 +31,11 @@ class MyState extends ChangeNotifier {
   Review? get review => _review;
 
   //Items//
-  AlbumItem? _album = null;
+  TrackItem? _trackList;
+
+  TrackItem? get tracklist => _trackList;
+
+  AlbumItem? _album;
 
   AlbumItem? get album => _album;
 
@@ -51,6 +55,14 @@ class MyState extends ChangeNotifier {
   String get newAlbum => _newAlbum;
 
   String get newArtist => _newArtist;
+
+  String _newAlbum1 = '';
+
+  String _newArtist1 = '';
+
+  String get newAlbum1 => _newAlbum1;
+
+  String get newArtist1 => _newArtist1;
 
   String _artistInfo = '';
 
@@ -75,6 +87,12 @@ class MyState extends ChangeNotifier {
   Future getAlbum() async {
     AlbumItem album = await ApiAlbumFetch.fetchAlbum(newAlbum, newArtist);
     _album = album;
+    notifyListeners();
+  }
+
+  Future getTrack() async {
+    TrackItem tracklist = await ApiTrackFetch.fetchTrack(newAlbum1, newArtist1);
+    _trackList = tracklist;
     notifyListeners();
   }
 
@@ -118,6 +136,12 @@ class MyState extends ChangeNotifier {
   void setAlbumArtist(String newArtist, String newAlbum) {
     _newAlbum = newAlbum;
     _newArtist = newArtist;
+    notifyListeners();
+  }
+
+  void setTrackList(String newArtist1, String newAlbum1) {
+    _newAlbum1 = newAlbum1;
+    _newArtist1 = newArtist1;
     notifyListeners();
   }
 
