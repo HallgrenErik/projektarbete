@@ -70,6 +70,11 @@ class _AlbumState extends State<AlbumState> {
               child: const Text('Write Review')),
           ListTile(
               title: Text(rad.albumDescription,
+                  maxLines: 10,
+                  style: const TextStyle(
+                      fontWeight: FontWeight.bold, color: Colors.white))),
+          ListTile(
+              title: Text('Read more about the album here: ' + rad.URL,
                   style: const TextStyle(
                       fontWeight: FontWeight.bold, color: Colors.white))),
           Container(height: 10),
