@@ -31,9 +31,6 @@ class MyState extends ChangeNotifier {
   Review? get review => _review;
 
   //Items//
-  TrackItem? _trackList;
-
-  TrackItem? get tracklist => _trackList;
 
   AlbumItem? _album;
 
@@ -90,12 +87,6 @@ class MyState extends ChangeNotifier {
     notifyListeners();
   }
 
-  Future getTrack() async {
-    TrackItem tracklist = await ApiTrackFetch.fetchTrack(newAlbum1, newArtist1);
-    _trackList = tracklist;
-    notifyListeners();
-  }
-
   Future getArtist() async {
     ArtistItem artist = await ApiArtistFetch.fetchArtist(artistInfo);
     _artist = artist;
@@ -136,12 +127,6 @@ class MyState extends ChangeNotifier {
   void setAlbumArtist(String newArtist, String newAlbum) {
     _newAlbum = newAlbum;
     _newArtist = newArtist;
-    notifyListeners();
-  }
-
-  void setTrackList(String newArtist1, String newAlbum1) {
-    _newAlbum1 = newAlbum1;
-    _newArtist1 = newArtist1;
     notifyListeners();
   }
 

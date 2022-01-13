@@ -10,9 +10,8 @@ import '../Items/review_item.dart';
 class AlbumState extends StatefulWidget {
   final AlbumItem? album;
   final List<Review> list;
-  final TrackItem? track;
 
-  AlbumState(this.album, this.list, this.track);
+  AlbumState(this.album, this.list);
 
   @override
   State<AlbumState> createState() => _AlbumState();
@@ -20,10 +19,10 @@ class AlbumState extends StatefulWidget {
 
 class _AlbumState extends State<AlbumState> {
   Widget build(BuildContext context) {
-    return _albumPage(context, widget.album, widget.list, widget.track);
+    return _albumPage(context, widget.album, widget.list);
   }
 
-  Widget _albumPage(context, rad, list, track) {
+  Widget _albumPage(context, rad, list) {
     if (rad == null) return Container();
     return SingleChildScrollView(
       child: Column(
@@ -36,11 +35,6 @@ class _AlbumState extends State<AlbumState> {
             height: 300,
           ),
           Container(height: 10),
-          Text(rad.track,
-              style: const TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 25,
-                  color: Colors.white)),
           Text(rad.albumTitle,
               style: const TextStyle(
                   fontWeight: FontWeight.bold,
