@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:my_first_app/Screens/start_page.dart';
+import '../Screens/start_page.dart';
 import 'package:provider/provider.dart';
 import '../Lists/album_list.dart';
 import '../States/my_state.dart';
 
 class SearchResultView extends StatelessWidget {
+  @override
   Widget build(BuildContext context) {
     Provider.of<MyState>(context, listen: false).fetchResultList();
     return Scaffold(

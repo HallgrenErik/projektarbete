@@ -12,7 +12,8 @@ class ArtistItem {
     return ArtistItem(
       artistName: json['name'],
       genre: json['tags']['tag'][0]['name'],
-      artistDescription: json['bio']['content'],
+      artistDescription:
+          json['bio']?['content'] ?? 'No artist description found.',
     );
   }
 }

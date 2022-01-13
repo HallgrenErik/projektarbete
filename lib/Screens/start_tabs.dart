@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_first_app/States/start_state.dart';
+import '../States/start_state.dart';
 import '../States/my_state.dart';
 import '../Lists/review_list.dart';
 import 'package:provider/provider.dart';

@@ -16,7 +16,8 @@ class AlbumItem {
       albumTitle: json["name"],
       artistName: json["artist"],
       cover: json['image'][4]['#text'],
-      albumDescription: json['wiki']['summary'],
+      albumDescription:
+          json['wiki']?['summary'] ?? 'No album description found',
     );
   }
 }

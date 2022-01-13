@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import '../Screens/album_info_view.dart';
-import 'album_list.dart';
-import 'package:my_first_app/States/my_state.dart';
+import '../States/my_state.dart';
 import 'package:provider/provider.dart';
 
 import '../Items/review_item.dart';
